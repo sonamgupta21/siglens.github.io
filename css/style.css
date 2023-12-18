@@ -17,7 +17,6 @@
 
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    background-color: var(--main-color);
     overflow-x: hidden;
 }
 
@@ -29,6 +28,9 @@ a {
     width: 0;/* This will hide the scrollbar */
 }
 
+#dark-theme{
+    background-color: var(--main-color);
+}
 /*NAVBAR*/
 
 .navbar {
@@ -227,11 +229,15 @@ a:focus {
 }
 
 .vertical-tab .tab-content {
-    color: #ACAABF;
+    color: #d3d3d3;
     font-size: 16px;
     border-left: 1px solid var(--ebony-1);
     display: table-cell;
     padding-left: 30px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 300;
+    line-height: 28px;
 }
 
 .vertical-tab .tab-content h3 {
@@ -240,6 +246,7 @@ a:focus {
     font-weight: 400;
     margin-bottom: 20px;
     font-family: 'IBM Plex Sans', monospace;
+    letter-spacing: 1.6px;
 }
 
 .para-light{
@@ -263,11 +270,10 @@ a:focus {
 .bottom-cards{
     color: var(--white-0);
     padding: 40px;
-    width: 500px;
     border: 1px solid #ffffff37;
     border-radius: 5px;
     cursor: pointer;
-    height: 250px;
+    min-height: 250px;
 }
 .git-card{
     border-right: none;
@@ -309,7 +315,8 @@ a:focus {
 
 /*FOOTER SECTION */
 #footer {
-    margin-top: 100px;
+    margin-top: 90px;
+    padding-top: 10px;
     background: var(--main-color);
     color: var(--ebony-1);
     font-weight: 200;
@@ -324,14 +331,14 @@ a:focus {
     font-size: 14px !important;
 }
 
-#footer a {
+#footer .footer-links a {
     color: var(--white-0);
     margin-right: 32px;
     font-weight: 200;
     letter-spacing: 0.03em;
 }
 
-#footer a:hover {
+#footer .footer-links a:hover {
     color: var(--purple-0);
     text-decoration: none;
 }
@@ -344,6 +351,25 @@ a:focus {
 
 .credits{
     font-size: 14px;
+    color: #d3d3d3;
+}
+
+.credits a{
+    color: var(--purple-0);
+}
+
+.icon-container{
+    border: 1px solid #C6B1DD;
+    background: linear-gradient(180deg, rgba(154, 77, 237, 0.29) 0%, rgba(198, 177, 221, 0.15) 80.73%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-0);
+    font-size: 18px;
 }
 
 /* Button  */
@@ -400,7 +426,6 @@ a:focus {
 }
 
 .nav-tabs {
-    text-align: center;
     display: block;
     border-bottom: 0;
     display: flex;
@@ -439,27 +464,41 @@ line-height: 26px;}
 
 /* SigLens Differentiator  */
 
-#siglens-differentiator {
-    margin-top: 100px;
+.carousel-item div {
+    width: 80%;
+    margin: auto;
 }
 
-#siglens-differentiator .vertical-tab{
-    width: 100%;
+.carousel-item h3 {
+    color: var(--purple-0);
+    font-size: 32px;
+    letter-spacing: 1.5px;
+    line-height: 48px;
+    font-family: 'IBM Plex Mono', sans-serif;
+    margin-bottom: 20px;
 }
 
-#siglens-differentiator .tab-content{
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    letter-spacing: 1.2px;
-    line-height: 27px;
+.carousel-item p{
+   color: #d3d3d3;
+   font-size: 17px;
+   font-family: 'Lato', sans-serif;
+   font-weight: 300;
+   letter-spacing: 1.2px;
+   line-height: 27px;
 }
 
+.main-header{
+    font-size: 42px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-align: center;
+}
 
 /* Mobile View  */
 
 @media (max-width: 767.98px) {
     /* navbar */
-
     #navbarSupportedContent {
         width: 100vw;
     }
@@ -469,6 +508,7 @@ line-height: 26px;}
         box-shadow: 0px 1px 4px 2px rgba(165, 149, 233, 0.2);
         border-radius: 10px;
     }
+
     .navbar-nav li {
         margin-right: 0;
         background: var(--main-color);
@@ -508,6 +548,10 @@ line-height: 26px;}
     }
 
     /* landing page */
+    .landing-container{
+        overflow-x: clip;
+    }
+
     .main-heading {
         font-size: 30px;
         margin-bottom: 10px;
@@ -531,20 +575,65 @@ line-height: 26px;}
         height: 184px;
     }
 
-
-    .vertical-tab .nav-tabs {
-        width: 100%;
-        margin: 0 0 10px;
-        display: block;
+    .git-text{
+        font-size: 20px;
+        line-height: 38px;
     }
 
-    .vertical-tab .nav-tabs li a {
-        padding: 15px 10px 14px;
-        margin-bottom: 10px;
+    .carousel-item h3 {
+        font-size: 26px;
+        letter-spacing: 1px;
+        line-height: 34px;
+    }
+    
+    .carousel-item p{
+       font-size: 16px;
+       letter-spacing: 1px;
+       line-height: 26px;
+    }
+
+    .code{
+        width: 90%;
+        padding: 20px;
+    }
+
+    .git-card,.community-card{
+        border: 1px solid #ffffff37;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    #footer{
+        margin-top: 60px;
+        padding-top: 40px;
+    }
+
+    .vertical-tab{
+        width: 95%;
+        text-align: center;
+        margin-top: 0px;
+    }
+    .vertical-tab .tab-content h3 {
+        margin-bottom: 16px;
+    }
+
+    .vertical-tab .nav-tabs {
+        display: none;
+    }
+    
+    .vertical-tab .tab-content > .tab-pane {
+        display: block ;
+        opacity: 1 ;
+        margin-top: 40px;
+        padding-bottom: 20px;
     }
 
     .vertical-tab .tab-content {
-        font-size: 14px;
+        font-size: 16px;
         display: block;
+        padding: 0;
+        border: none;
     }
 }

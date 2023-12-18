@@ -37,19 +37,17 @@
     content="SigScalr provides insights on petabytes of logs, metrics and traces data. An innovative architecture that swiftly filters through compressed data without the need for costly decompression, resulting in significant reductions in compute and storage.">
   <meta name="twitter:image" content="https://www.sigscalr.io/assets/sig-share-img.png">
 </head>
-<!--gtag-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0P5EF9CN4"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-J0P5EF9CN4');
+
+  gtag('config', 'G-RGR7MCHV8F');
 </script>
 
-<body>
+<body id="dark-theme">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
     <div class="container">
@@ -69,7 +67,7 @@
             <a class="nav-link" href="https://siglens.github.io/siglens-docs/" target="_blank">Documentation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://sigscalr.io/blog/allblogs.html">Blogs</a>
+            <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="about-us.html" id="navbarDropdown" role="button"
@@ -77,6 +75,8 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
               <a class="dropdown-item" href="/slack.html">Slack</a>
+              <a class="dropdown-item" href="/guides.html">Guides</a>
+              <a class="dropdown-item" href="/questions.html">Questions</a>
             </div>
           </li>
           <li>
@@ -99,23 +99,22 @@
         Industry's Fastest Log Management
       </div>
       <div class="sub-heading text-center"><strong>100x</strong> Lower Compute and Storage than Splunk, Elastic, Loki</div>
-      <div class="sub-heading text-center">Cost Reduction by <strong>90%</strong></div>
     </div>
     <img src="./assets/main-gradient.svg" alt="" class="main-gradient position-absolute">
 
     <div class="video-container mx-auto"></div>
   </section>
 
-  <section class="my-5 py-5">
-    <div class="container my-5 py-5 position-relative">
+  <section class="my-md-5 py-md-5 py-0 my-0">
+    <div class="container my-5 py-5 position-relative py-md-5">
       <img src="./assets/light-gradient.svg" alt="" class="light-gradient">
       <div class="row d-flex justify-content-center align-items-center px-5">
         <div class="col-md-8 col-12">
-          <div class="text-left git-text text-white font-weight-light">
-            Open Source single binary with no third party dependencies. Drop-in replacement with many query languages support.
+          <div class="text-center text-md-left git-text text-white font-weight-light">
+            Open Source single binary with no third party dependencies. Drop-in replacement with many query languages supported.
           </div>
         </div>
-        <div class="col-4 d-flex justify-content-center align-items-center flex-column">
+        <div class="col-md-4 col-12 d-flex justify-content-center align-items-center flex-column mt-md-0 mt-4">
           <i class="fa-brands fa-github"></i>
           <button class="btn mt-4">
             <a href="https://github.com/siglens/siglens">SigLens on Github</a>
@@ -128,7 +127,7 @@
   <!-- Why SigLens  -->
   <section id="why-siglens">
     <div class="container my-5">
-      <div class="main-heading text-center text-white font-weight-light mb-5">Why SigLens</div>
+      <div class="main-heading text-center text-white font-weight-light mb-md-5 mb-3">Why SigLens</div>
       <div class="row">
         <div class="col-md-12">
           <div class="vertical-tab" role="tabpanel">
@@ -227,73 +226,129 @@
     </div>
   </section>
 
-  <section id="siglens-differentiator">
-    <div class="container my-5">
-      <div class="main-heading text-center text-white font-weight-light mb-5">SigLens Differentiator</div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="vertical-tab" role="tabpanel">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" >
-                <a href="#compare1" aria-controls="home" role="tab" data-toggle="tab" class="active">SigLens v/s Loki</a>
-              </li>
-              <li role="presentation">
-                <a href="#compare2" aria-controls="profile" role="tab" data-toggle="tab">SigLens v/s Elasticsearch</a>
-              </li>
-              <li role="presentation">
-                <a href="#compare3" aria-controls="messages" role="tab" data-toggle="tab">
-                  SigLens v/s InfluxDB/parquet/Arrow</a>
-              </li>
-              <li role="presentation">
-                <a href="#compare4" aria-controls="messages" role="tab" data-toggle="tab">SigLens v/s ClickHouse</a>
-              </li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content tabs">
-              <div role="tabpanel" class="tab-pane active" id="compare1">
-                <h3>SigLens v/s Loki</h3>
-                <p>
-                  Loki indexes only the metadata fields (labels) and not the actual log lines, enabling fast ingestion and smaller index sizes. However, this has an adverse effect on query times. If you are querying on the logline—most queries fall into this category—the query response times are in minutes. Additionally, it uses S3 for storing the loglines, incurring a lot of round trips to the S3 bucket. This further increases query response times and results in a higher AWS bill due to the repeated head/get requests to S3.
-                  <br> <br>
-                  SigLens indexes all fields including the logline using an innovative approach of microindexing. The micro indices are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speed is fast. It does not suffer the disadvantage that loki has. Micro indices achieve almost the similar query performance that an actual index has although at 1/100th the cost. SigLens also invented AgileAggsTree which helps run aggregation queries at lightening fast speed. Aggregations queries with Loki are super slow.
-                </p>
-              </div>
-              <div role="tabpanel" class="tab-pane fade" id="compare2">
-                <h3>SigLens v/s Elasticsearch</h3>
-      <p>
-        Elasticsearch uses an inverted index that helps it in doing fast searches. The inverted index works well when there is more structured repeatable data. However, with the log lines, the data is almost always very unstructured. Due to this the index size grows. It is not uncommon to see the actual disk usage of ES to be 110% or more of the incoming volume due to its index. And as the index size grows , it does not fit on one machine requiring a cluster of machines. Elasticsearch also suffers from slow query times if you search on the log lines sub-texts. Aggregation queries also super slow with ES. Due to a need of multiple machines, it is quite common for elastic indices to be yellow/red routinely due to infra/security updates. This causes slower query and slower ingestion times.
-
-        <br> <br>
-SigLens invented microindexing technology. The micro indices are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speeds fast. SigLens uses dynamic columnar compressions, therefore the on disk storage size is often 10% of the incoming volume. This helps during query times and lower storage/compute requirements. The search/filter kind of queries perform 4x-8x faster than Elastic due to the microindexing tech. SigLens also invented the AigileAgssTree which helps run aggregation queries at lightening fast speed. Overall SigLens uses several magnitudes lower compute and storage compared to ES and has several magnitudes faster ingest and query times.
-      </p>
-              </div>
-              <div role="tabpanel" class="tab-pane fade" id="compare3">
-                <h3>SigLens v/s InfluxDB/parquet/Arrow</h3>
-               <p> There are many products coming up in recent years like the InfluxDB IOx. This architecture involves converting incoming data into parquet files, storing them in S3, mapping the files in memory using Apache Arrow, and using the memory-mapped files to serve queries. This architecture has advantages of better compression ratios, faster ingestion, lower storage requirements. But it suffers on query response times. If your query touches on parquet files that are non memory mapped, then Apache Arrow drops the in-memory files, downloads/pulls the required parquet files and then serves the query. This has significant impact on query response times. If you have a set of queries that constantly query old and new data, then there is repeated loop of drop/pull causing queries to further slow down. Not to mention the repeated round trips to S3 thereby increasing your AWS bill. You are then forced to allocate a set of nodes to handle the queries, thereby increasing your infra cost and higher S3 transport costs.
+  <section class="my-md-5 pt-md-5">
+    <div class="container py-md-5 py-3 position-relative">
+      <img src="./assets/gradient-3.svg" alt="" class="light-gradient">
+      <div class="main-heading text-center text-white font-weight-light mb-md-5 mb-4">SigLens Differentiator</div>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div>
+              <h3>SigLens v/s Loki</h3>
+              <p>
+                Loki indexes only the metadata fields (labels) and not the actual log lines, enabling fast ingestion
+                and smaller index sizes. However, this has an adverse effect on query times. If you are querying on
+                the logline—most queries fall into this category—the query response times are in minutes.
+                Additionally, it uses S3 for storing the loglines, incurring a lot of round trips to the S3 bucket.
+                This further increases query response times and results in a higher AWS bill due to the repeated
+                head/get requests to S3.
                 <br> <br>
-                SigLens does not suffer from these issues. Due to its innovative approach it achieves a balance of faster ingestion, faster queries and lower hardware requirements The micro indices that SigLens invented are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speeds fast. SigLens uses dynamic columnar compressions, therefore the on disk storage size is often 10% of the incoming volume. This helps during query times and lower storage/compute requirements. The search/filter kind of queries perform several magintudes faster than Influx due to the microindexing tech. SigLens also invented the AigileAgssTree which helps run aggregation queries at lightening fast speed. Overall SigLens uses several magnitudes lower compute  compared to Influx/Parquet/Arrow and has several magnitudes faster ingest and query times.</p>
-              </div>
-              <div role="tabpanel" class="tab-pane fade" id="compare4">
-                <h3>SigLens v/s ClickHouse</h3>
-                <p>
-                 SigLens and ClickHouse have quite a few things in common. Both are columnar databases. Both achieve great compression ratios. The places where SigLens differs are dynamic columnar compression algorithms, Microindexing tech and AgileAggsTree. In ClickHouse you have to predefine the Engines on columns (MergeTree, etc..) and the Materialized views. For log related workload, the data changes quite often so it is an operational overhead that you have to bear with. SigLens on the other hand uses dynamic columnar compression and dynamic micro indices, wherein you don't need to predefine anything. SigLens reduces your operational overhead while still achieving similar or superior query performances.
-                 <br> <br>
-                 Due to its dynamic columnar compression algorithms it also achieves better compression ratios than ClickHouse. ClickHouse achieves faster ingestion speeds provided you send row updates in bulk. For analytical workloads its fine however for logging related workloads the log data is constantly coming in. If you wait for rows to accumulate in order to do bulk updates, then your queries can't search for the latest data. For observability and live debugging uses cases this is a problem. SigLens does not suffer from this issue.
-                 <br><br>
-                 ClickHouse does not support read-time field extraction, a very popular feature that developers use during production issues. Splunk is the only product that supports this. But now SigLens is the only other product that has this feature. During ingestion you can ingest whatever format and whatever you want and during query SigLens/Splunk will let you create dynamic fields based on the log line and use it in further pipelining of the queries. SigLens/Splunk support the pipe-based query language, a very popular feature amongst developers, ClickHouse does not support this.
-                </p>
-              </div>
-          
+                SigLens indexes all fields including the logline using an innovative approach of microindexing. The
+                micro indices are 1/100th the size of an actual index and therefore the index sizes are small and
+                ingestion speed is fast. It does not suffer the disadvantage that loki has. Micro indices achieve
+                almost the similar query performance that an actual index has although at 1/100th the cost. SigLens
+                also invented AgileAggsTree which helps run aggregation queries at lightening fast speed. Aggregations
+                queries with Loki are super slow.
+              </p>
             </div>
           </div>
+          <div class="carousel-item">
+            <div>
+              <h3>SigLens v/s Elasticsearch</h3>
+              <p>
+                Elasticsearch uses an inverted index that helps it in doing fast searches. The inverted index works well
+                when there is more structured repeatable data. However, with the log lines, the data is almost always
+                very unstructured. Due to this the index size grows. It is not uncommon to see the actual disk usage of
+                ES to be 110% or more of the incoming volume due to its index. And as the index size grows , it does not
+                fit on one machine requiring a cluster of machines. Elasticsearch also suffers from slow query times if
+                you search on the log lines sub-texts. Aggregation queries also super slow with ES. Due to a need of
+                multiple machines, it is quite common for elastic indices to be yellow/red routinely due to
+                infra/security updates. This causes slower query and slower ingestion times.
+
+                <br> <br>
+                SigLens invented microindexing technology. The micro indices are 1/100th the size of an actual index and
+                therefore the index sizes are small and ingestion speeds fast. SigLens uses dynamic columnar
+                compressions, therefore the on disk storage size is often 10% of the incoming volume. This helps during
+                query times and lower storage/compute requirements. The search/filter kind of queries perform 4x-8x
+                faster than Elastic due to the microindexing tech. SigLens also invented the AigileAgssTree which helps
+                run aggregation queries at lightening fast speed. Overall SigLens uses several magnitudes lower compute
+                and storage compared to ES and has several magnitudes faster ingest and query times.
+              </p>
+            </div>
+
+          </div>
+          <div class="carousel-item">
+            <div>
+              <h3>SigLens v/s InfluxDB/parquet/Arrow</h3>
+              <p> There are many products coming up in recent years like the InfluxDB IOx. This architecture involves
+                converting incoming data into parquet files, storing them in S3, mapping the files in memory using
+                Apache Arrow, and using the memory-mapped files to serve queries. This architecture has advantages of
+                better compression ratios, faster ingestion, lower storage requirements. But it suffers on query
+                response times. If your query touches on parquet files that are non memory mapped, then Apache Arrow
+                drops the in-memory files, downloads/pulls the required parquet files and then serves the query. This
+                has significant impact on query response times. If you have a set of queries that constantly query old
+                and new data, then there is repeated loop of drop/pull causing queries to further slow down. Not to
+                mention the repeated round trips to S3 thereby increasing your AWS bill. You are then forced to allocate
+                a set of nodes to handle the queries, thereby increasing your infra cost and higher S3 transport costs.
+                <br> <br>
+                SigLens does not suffer from these issues. Due to its innovative approach it achieves a balance of
+                faster ingestion, faster queries and lower hardware requirements The micro indices that SigLens invented
+                are 1/100th the size of an actual index and therefore the index sizes are small and ingestion speeds
+                fast. SigLens uses dynamic columnar compressions, therefore the on disk storage size is often 10% of the
+                incoming volume. This helps during query times and lower storage/compute requirements. The search/filter
+                kind of queries perform several magintudes faster than Influx due to the microindexing tech. SigLens
+                also invented the AigileAgssTree which helps run aggregation queries at lightening fast speed. Overall
+                SigLens uses several magnitudes lower compute compared to Influx/Parquet/Arrow and has several
+                magnitudes faster ingest and query times.
+              </p>
+            </div>
+
+          </div>
+          <div class="carousel-item">
+            <div>
+              <h3>SigLens v/s ClickHouse</h3>
+              <p>
+                SigLens and ClickHouse have quite a few things in common. Both are columnar databases. Both achieve
+                great compression ratios. The places where SigLens differs are dynamic columnar compression
+                algorithms, Microindexing tech and AgileAggsTree. In ClickHouse you have to predefine the Engines on
+                columns (MergeTree, etc..) and the Materialized views. For log related workload, the data changes
+                quite often so it is an operational overhead that you have to bear with. SigLens on the other hand
+                uses dynamic columnar compression and dynamic micro indices, wherein you don't need to predefine
+                anything. SigLens reduces your operational overhead while still achieving similar or superior query
+                performances.
+                <br> <br>
+                Due to its dynamic columnar compression algorithms it also achieves better compression ratios than
+                ClickHouse. ClickHouse achieves faster ingestion speeds provided you send row updates in bulk. For
+                analytical workloads its fine however for logging related workloads the log data is constantly coming
+                in. If you wait for rows to accumulate in order to do bulk updates, then your queries can't search for
+                the latest data. For observability and live debugging uses cases this is a problem. SigLens does not
+                suffer from this issue.
+                <br><br>
+                ClickHouse does not support read-time field extraction, a very popular feature that developers use
+                during production issues. Splunk is the only product that supports this. But now SigLens is the only
+                other product that has this feature. During ingestion you can ingest whatever format and whatever you
+                want and during query SigLens/Splunk will let you create dynamic fields based on the log line and use
+                it in further pipelining of the queries. SigLens/Splunk support the pipe-based query language, a very
+                popular feature amongst developers, ClickHouse does not support this.
+              </p>
+            </div>
+
+          </div>
         </div>
+        <a class="carousel-control-prev pr-5" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next pl-5" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
-    </div>
   </section>
+
   <!-- Getting Started -->
-  <section id="getting-started" class="pt-5"> 
+  <section id="getting-started" class="py-5"> 
     <div class="container getting-started-container">
       <div class="main-heading text-center text-white font-weight-light mb-4">Getting Started</div>
       <div class="m-auto text-center">
@@ -336,11 +391,11 @@ SigLens invented microindexing technology. The micro indices are 1/100th the siz
   </section>
 
   <!-- Contribute and Community Section  -->
-  <section class="pt-5">
+  <section class="pt-md-5">
     <div class="container position-relative">
-      <div class="d-flex justify-content-center align-items-center">
-        <img src="./assets/gradient-3.svg" alt="" class="light-gradient">
-        <div class="bottom-cards git-card d-flex justify-content-center align-items-center flex-column text-center" onclick="redirectToPage('https://github.com/siglens/siglens')">
+      <img src="./assets/gradient-3.svg" alt="" class="light-gradient">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-6 col-10 bottom-cards git-card d-flex justify-content-center align-items-center flex-column text-center" onclick="redirectToPage('https://github.com/siglens/siglens')">
           <div>
             <i class="fa-solid fa-star"></i>
           </div>
@@ -353,7 +408,7 @@ SigLens invented microindexing technology. The micro indices are 1/100th the siz
           </div>
         </div>
         <div
-          class="bottom-cards community-card d-flex justify-content-center align-items-center flex-column text-center"
+          class="col-md-6 col-10 bottom-cards community-card d-flex justify-content-center align-items-center flex-column text-center"
           onclick="redirectToPage('/slack.html')">
           <div>
             <i class="fa-brands fa-slack"></i>
@@ -370,26 +425,28 @@ SigLens invented microindexing technology. The micro indices are 1/100th the siz
     </div>
   </section>
 
-  <footer id="footer" class="mb-5">
+  <footer id="footer" class="pb-5">
     <div class="container">
-      <div class="row py-5">
-        <div class="col-md-7 d-flex flex-row pl-5">
+      <div class="row py-0 py-md-5">
+        <div class="col-md-7 d-flex flex-row pl-5 footer-links order-1 order-md-0 mt-5 mt-md-0">
           <div>
             <a href="https://siglens.github.io/siglens-docs/" target="_blank"
               class="footer-nav-heading">Documentation</a>
           </div>
           <div>
-            <a href="https://sigscalr.io/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+            <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
           </div>
           <div class="d-flex flex-column">
             <a href="#" class="footer-nav-heading">Community</a>
             <a class="mt-3 pl-2" href="https://github.com/siglens/siglens">GitHub</a>
             <a class="mt-3 pl-2" href="/slack.html">Slack</a>
+            <a class="mt-3 pl-2" href="/guides.html">Guides</a>
+            <a class="mt-3 pl-2" href="/questions.html">Questions</a>
           </div>
         </div>
-        <div class="col-md-5 text-md-start">
+        <div class="col-md-5 text-md-start footer-links order-0 order-md-1 mx-4 mx-md-0">
           <h5 class="text-start font-weight-bold text-white">Subscribe for updates</h5>
-          <form class="d-flex flex-column gap-4 align-items-end flex-md-row " id="newsletter-form">
+          <form class="d-flex gap-4 align-items-end flex-row " id="newsletter-form">
             <div class="flex-fill w-100 mt-4">
               <input class="form-control" type="email" id="ns-email" placeholder="Your Email">
             </div>
@@ -398,12 +455,22 @@ SigLens invented microindexing technology. The micro indices are 1/100th the siz
             </div>
           </form>
         </div>
+        <div class="col-md-4 col-sm-12 mt-5 pl-5 order-2 order-md-2">
+          <div class="d-flex">
+            <a class="mr-4" href="https://twitter.com/sigscalr" target="_blank">
+              <div class="icon-container"><i class="fa-brands fa-x-twitter"></i></div>
+            </a>
+            <a class="" href="https://www.linkedin.com/company/sigscalr-io/" target="_blank">
+              <div class="icon-container"><i class="fa-brands fa-linkedin-in"></i></div>
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div class="mt-3 d-flex justify-content-center text-secondary credits flex-column align-items-center">
+      <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
         <img src="./assets/ss-logo.svg" alt="" style="height: 50px;">
         <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
-        <div>Made with ❤️ in New Hampshire, California, Montana and India.</div>
+        <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
         <div>Copyright © 2024 - <strong class="text-white pointer-event"><a href="https://www.sigscalr.io/">SigScalr Inc.</a></strong></div>
       </div>
     </div>
