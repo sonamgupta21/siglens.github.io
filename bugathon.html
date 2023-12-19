@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SigLens | Bugathon</title>
+  <link rel="icon" href="/favicon.svg">
+  <!-- Font-awesome Family -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!--  Main CSS File -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 20px;
+      letter-spacing: 1.6px;
+    }
+
+    .purple-border {
+      border: 1px solid var(--purple-0);
+      background-color: rgba(255, 255, 255, 0.03);
+      width: 40%;
+      margin: auto;
+      border-radius: 20px;
+
+    }
+
+    .main-header {
+      font-size: 24px;
+    }
+
+    .main-text {
+      font-size: 26px;
+    }
+
+    .bugathon-main-heading {
+      font-size: 56px;
+      margin-bottom: 30px;
+      margin-top: -150px;
+      font-weight: 300;
+    }
+
+    form {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: #FFF;
+      width: 100%;
+    }
+
+    ul li,
+    ol li {
+      margin-top: 6px;
+    }
+
+    a,
+    a:hover {
+      color: #8486F0;
+      font-weight: bold;
+    }
+
+    .heading {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .heading::after {
+      content: "";
+      display: inline-block;
+      height: 3px;
+      position: absolute;
+      background: linear-gradient(80.14deg, #6347D9 -5.85%, #B4A6E6 120.85%);
+      width: 105%;
+      bottom: -8px;
+      left: 17px;
+      border-radius: 10px;
+    }
+
+    .email-box {
+      width: 70%;
+    }
+
+    .participate-btn{
+      font-size: 24px;
+      height: 54px;
+      letter-spacing: 2px;
+    }
+    /* Mobile View  */
+
+    @media (max-width: 767.98px) {
+      .bugathon-main-heading {
+        font-size: 32px;
+      }
+
+      .purple-border {
+        width: 90%;
+      }
+
+      .main-text {
+        font-size: 20px;
+      }
+
+      .main-header {
+        font-size: 22px;
+      }
+
+      body {
+        font-size: 18px;
+      }
+
+      .heading {
+        font-size: 22px;
+      }
+
+      .main-gradient {
+        top: 30%;
+        width: 100%;
+      }
+
+      .email-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGR7MCHV8F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-RGR7MCHV8F');
+</script>
+
+
+<body id="dark-theme">
+
+  <section class="container text-white mb-5 pb-5">
+    <section class="landing-container container text-white my-md-5 my-0">
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <div class="bugathon-main-heading text-center">
+          SigLens Bug-A-Thon
+        </div>
+      </div>
+    </section>
+
+    <section class="my-md-5 p-md-5 p-4 my-1 purple-border" style="overflow-x: clip;">
+      <div class="d-flex justify-content-center align-items-center ">
+        <i class="fa-solid fa-trophy fa-md-2x fa-2" style="color: var(--marigold)"></i>
+        <div class="main-header text-white m-0 pl-3">Prizes</div>
+      </div>
+      <div class="text-center main-text mt-4">
+        <div>First Prize: <span class="font-weight-bold">₹ 10,000</span></div>
+        <div class="mt-2">Runner Up Prize: <span class="font-weight-bold">₹ 5,000</span></div>
+      </div>
+      <img src="./assets/main-gradient.svg" alt="" class="main-gradient position-absolute" style="opacity: 0.8;">
+
+    </section>
+
+    <section class="my-5 py-5">
+      <div class="d-flex justify-content-center align-items-center ">
+        <i <i class="fa-solid fa-calendar-days fa-md-2x fa-2" style="color: #00C6CB"></i>
+        <div class="main-header text-white m-0 pl-3">Competition Period</div>
+      </div>
+      <div
+        class="d-flex gap-5 flex-column align-items-center main-text text-center mt-4 flex-md-row justify-content-center">
+        <div class="ml-3"><strong>19-Dec-2023</strong></div>
+        <div class="ml-3">to</div>
+        <div class="ml-3"><strong>12-Jan-2024</strong></div>
+      </div>
+    </section>
+
+
+    <section class="my-md-5 py-md-5 px-md-5 px-2 my-0 py-0">
+      <div class="text-white m-0 pl-3 font-weight-light heading">Rules : </div>
+      <ul class="font-weight-light mt-4">
+        <li>Follow the process outlined below and submit as many unique bugs as you can.</li>
+        <li>Give a Star on the GitHub repo.</li>
+        <li>Tweet a post about how useful SigLens is.</li>
+        <li>Create a LinkedIn post about how useful SigLens is.</li>
+      </ul>
+    </section>
+
+    <section class="my-5 py-5 px-md-5 px-2">
+      <div class="text-white m-0 pl-3 font-weight-light h1 heading">Process : </div>
+      <ol class="font-weight-light mt-4">
+        <li>Install SigLens from <a href="https://github.com/siglens/siglens/">here</a> by following the README.</li>
+        <li>Send some test data (logs and traces) by using <a
+            href="https://github.com/sigscalr/sigscalr-client">this</a> link.</li>
+        <li>Send various kind of data using this <a href="https://siglens.github.io/siglens-docs/">link</a>.</li>
+        <li>Use the SigLens UI to test various things in the UI.</li>
+        <li>If you run into any issue, drop a message in the support channel on this <a href="/slack.html">Slack</a>.
+        </li>
+        <li>Send a screenshot of your LinkedIn post, Twitter post, your GitHub star, and the bugs you created to
+          @Bhavana on this <a href="/slack.html">Slack</a></li>
+        <li>We will review all entries and announce the winner and transfer the prize money by direct deposit to your
+          account.</li>
+      </ol>
+    </section>
+
+    <section class="my-0 py-md-5 px-md-5 py-2 px-2 position-relative">
+      <div class="text-white m-0 pl-3 font-weight-light h1 heading">Who are we : </div>
+      <p class="font-weight-light mt-4 pl-3"><strong>SigLens</strong> is disrupting the observability market with a
+        purpose built
+        architecture that provides
+        over <strong>100x</strong> performance improvements using a fraction of resources.
+      </p>
+      <img src="./assets/light-gradient.svg" alt="" class="light-gradient">
+    </section>
+    <section class="pt-5 position-relative d-flex justify-content-center">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <a class="text-white m-0 font-weight-bold h1 btn participate-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdAugP9L_fVsmkxfXSrlC5sgZ2eRxab9oVmMEKcSCQV3ULLGg/viewform?usp=sf_link">Participate
+        </a>
+      </div>
+    </section>
+
+
+  </section>
+
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
