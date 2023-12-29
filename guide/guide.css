@@ -20,6 +20,28 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+.mb-5, .my-5 {
+    margin-top: 0rem !important;
+    }
+.col-md-10{
+    margin-top: 3rem !important;
+    margin-bottom: 2rem !important;
+}
+.bgi{
+    background-image: url("../assets/elastic.jpg");
+    background-position: center;
+    background-size: 100rem;
+    background-repeat: no-repeat;
+}
+.bc{
+    background: rgb(224, 212, 246);
+}
+.container, .container-sm, .container-md, .container-lg {
+    max-width: 1500px;
+    margin-left: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+    }
 .card a {
     text-decoration: none;
 }
@@ -69,12 +91,12 @@ body {
     margin-right: 50px !important;
 }
 .main-heading {
-    color: var(--header-color);
+    color: var( --white-0);
     letter-spacing: 0.03rem;
     font-size: 34px;
     font-weight: 800;
     line-height: 130%;
-    margin-left: 100px;
+    margin-left: 200px;
     margin-right: 0px;
     width: 1000px;
 }
