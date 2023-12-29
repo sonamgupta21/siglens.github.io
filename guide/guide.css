@@ -65,13 +65,18 @@ body {
 .card-body {
     padding: 20px;
 }
-
+.mx-auto,.col-md-10 {
+    margin-right: 50px !important;
+}
 .main-heading {
     color: var(--header-color);
     letter-spacing: 0.03rem;
-    font-size: 44px;
+    font-size: 34px;
     font-weight: 800;
-    line-height: 150%;
+    line-height: 130%;
+    margin-left: 100px;
+    margin-right: 0px;
+    width: 1000px;
 }
 .blog-post ul li {
     text-align: left;
@@ -83,15 +88,6 @@ body {
     color: var(--black-1);
     line-height: 175%;
 }
-.main-guide-img1{
-    height: 300px;
-    width: 500;
-}
-.main-guide-img2{
-    height: 300px;
-    width: 550;
-    margin-left: 150px;
-}
 .main-guide-img3{
     height: 350px;
     width: 600;
@@ -102,9 +98,9 @@ body {
     bottom: 90px;
     position: sticky;
     width: 250px;
-    padding: 20px;
+    padding: 0px;
     display: flex;
-    margin-left: -40px;
+    margin-left: 0px;
     max-height: 80vh;
     overflow-y: auto;
 }
@@ -128,7 +124,8 @@ body {
     margin-left: -10px;
 }
 #all-sections {
-    margin-left: 60px;
+    margin-left: 20px;
+    margin-right: 0px;
 }
 .blog-para {
     font-size: 16px;
