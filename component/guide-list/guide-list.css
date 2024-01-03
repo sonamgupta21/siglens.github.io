@@ -5,9 +5,13 @@
     justify-content: left;
 }
 .link-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
     height: 50px;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.295);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .title-column,
 .detailed-link-list,
@@ -20,7 +24,15 @@
     flex-direction: column;
     color: white;
 }
+.item-intro{
+    margin-bottom: 30px;
+}
+.right-block{
+    margin: auto;
+    width: 70%;
+}
 .container-guide{
+    letter-spacing: 1px;
     padding: 0 200px;
 }
 .title-list{
@@ -28,54 +40,74 @@
 }
 .title-name{
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: 'Lato';
+    letter-spacing: 1.2px;
 }
 .basic-intro{
-    color: rgba(220, 219, 223, 0.6);
+    color: #d4d4d4;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1.2px;
+    font-weight: 300;
+    line-height: 28px;
 }
 .detailed-box{
     padding: 20px 0;
 }
 .detailed-item-title{
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    margin-bottom: -10px;
 }
 .detailed-link-list{
-    border: 1px solid rgba(220, 219, 223, 0.6);
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    padding: 15px;
-    background-color: rgba(99, 71, 217, 0.05);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 .link-title{
     width: 350px;
     margin-left: 20px;
+    letter-spacing: 1px;
+    font-weight: 300;
 }
-.time-img{
-    width: 15px;
-    height: 15px;
-    margin-top: -3px;
+.fa-clock, .fa-chevron-right{
+    color: rgba(220, 219, 223, 0.6);
+    font-size: 14px;
+    margin-right: 10px;
+}
+.fa-chevron-right{
+    font-size: 14px;
+    margin-left: 30px;
 }
 .description-img{
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
 }
 .link-tail{
-    width: 70px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .remove-line{
     border: none;
 }
 .link-info:hover{
-    background-color: rgba(99, 71, 217, 0.2);
+    background-color: rgba(99, 71, 217, 0.15);
     border-radius: 10px;
-    cursor: -webkit-grab;
+    cursor: pointer;
 }
 .time-spent{
     color: rgba(220, 219, 223, 0.6);
 }
 .navigate-title{
-    color: rgba(220, 219, 223, 0.8);
-    margin-bottom: 20px;
+    color: rgba(220, 219, 223, 0.5);
+    margin-bottom: 10px;
     margin-left: 10px;
+    font-size: 14px;
+    letter-spacing: 1.2px;
 }
 .title-item{
     height: 40px;
@@ -91,5 +123,10 @@
     background-color: rgba(99, 71, 217, 0.2);
 }
 .title-item:hover{
-    cursor: -webkit-grab;
+    cursor: pointer;
+}
+
+.light-gradient{
+    top: 60%;
+    opacity: 0.8;
 }
