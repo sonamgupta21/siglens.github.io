@@ -30,15 +30,16 @@ body {
 .bgi{
     background-image: url("../assets/elastic.jpg");
     background-position: center;
-    background-size: 100rem;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 .bc{
-    background: rgb(224, 212, 246);
+    width: 100%;
+    background: rgba(241,250,255,.8);
 }
 .container, .container-sm, .container-md, .container-lg {
-    max-width: 1500px;
-    margin-left: 15px;
+    max-width: 100%;
+    margin-left: 0px;
     padding-left: 0px;
     padding-right: 0px;
     }
@@ -103,9 +104,9 @@ body {
     font-size: 34px;
     font-weight: 800;
     line-height: 130%;
-    margin-left: 200px;
-    margin-right: 0px;
-    width: 1000px;
+    margin-left: 20px;
+    margin-right: auto;
+    width: 100%;
 }
 .blog-post ul li {
     text-align: left;
@@ -153,9 +154,22 @@ body {
     margin-left: -10px;
 }
 #all-sections {
-    margin-top: 230px;
-    margin-left: 20px;
-    margin-right: 0px;
+    margin-top: 12.37rem;
+    margin-left: 1.25rem;
+    margin-right: 0em;
+}
+html {
+    scroll-behavior: smooth;
+}
+.sdm{
+    margin-left: 15px;
+}
+footer,.pb-5,#footer{
+    background-color: rgb(2 ,0 ,13);
+    padding: 30px;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: 100%;
 }
 .blog-para {
     font-size: 16px;
@@ -170,4 +184,82 @@ body {
     letter-spacing: 0.02rem;
 }
 
+/*Mobile Devices*/
 
+@media (max-width: 767.98px) {
+
+    .main-heading {
+        font-size: 32px;
+    }
+
+    .blog-post .para-bold {
+        font-size: 16px;
+        line-height: 140%;
+    }
+    .heading {
+        font-size: 26px;
+    }
+
+    .sub-heading {
+        font-size: 24px;
+    }
+
+    .blog-para {
+        line-height: 150%;
+    }
+
+    .blog-post ul li {
+        text-align: left;
+    }
+
+    .share-links div {
+        margin-right: 10px;
+    }
+
+    #sidebar {
+        display: none;
+    }
+
+    #all-sections {
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .ShapeDataTable {
+        width: 320px;
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .table-div,
+    .comparision-table {
+        overflow-x: auto;
+    }
+
+    .sys-compare-table thead th:first-child {
+        min-width: 0px;
+    }
+
+    .card {
+        margin-top: 20px;
+    }
+
+    #ingestion-bytes,
+    #ingestion-events,
+    #compression-ratio,
+    #cluster-stats-indexes,
+    #batch-3hours,
+    #batch-30days,
+    #ingestion-cpu,
+    #ingestion-memory {
+        height: 250px;
+        width: 360px;
+    }
+
+    #aws-cost {
+        height: 300px;
+    }
+}
