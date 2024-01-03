@@ -52,25 +52,29 @@
               console.log("cone in");
               $(`#detailed-link-list-${index}`).append(`
             <div class="link-info remove-line" id="link-info-${index}-${innerIndex}">
-                <img class="description-img" src="./assets/description.svg">
-                <span class="link-title">${innerValue.itemHead}</span>
-                <div class="link-tail">
-                  <img class="time-img" src="./assets/schedule.svg">
-                  <span class="time-spent">${innerValue.itemTime}</span>
+                <div>
+                  <img class="description-img" src="./assets/description.svg">
+                  <span class="link-title">${innerValue.itemHead}</span>
                 </div>
-                <img src="./assets/chevron.svg" class="arrow">
+                <div class="link-tail">
+                <i class="fa-regular fa-clock"></i>
+                  <span class="time-spent">${innerValue.itemTime}</span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
             </div>
           `);
             } else {
               $(`#detailed-link-list-${index}`).append(`
             <div class="link-info"  id="link-info-${index}-${innerIndex}">
-                <img class="description-img" src="./assets/description.svg">
-                <span class="link-title">${innerValue.itemHead}</span>
-                <div class="link-tail">
-                  <img class="time-img" src="./assets/schedule.svg">
-                  <span class="time-spent">${innerValue.itemTime}</span>
+                <div>
+                  <img class="description-img" src="./assets/description.svg">
+                  <span class="link-title">${innerValue.itemHead}</span>
                 </div>
-                <img src="./assets/chevron.svg" class="arrow">
+                <div class="link-tail">
+               <i class="fa-regular fa-clock"></i>
+                  <span class="time-spent">${innerValue.itemTime}</span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
             </div>
           `);
             }
