@@ -4,19 +4,47 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
- 
-    // Copy to clipboard functionality
-  $('#copyBtn').click(function() {
-    var codeText = $('.code').text().trim();
-    navigator.clipboard.writeText(codeText)
-
-    $('#copyBtn').tooltip({
-        title: 'Copied!',
-        trigger: 'manual'
-    }).tooltip('show');
-    setTimeout(function() {
-        $('#copyBtn').tooltip('hide');
-    }, 1000);
+    let titleList = ["ElasticSearch", "Logs"];
+    let data = [
+      {
+        title: "ElasticSearch",
+        // basicIntro:"Basic intro",
+        detailedList: [
+          {
+            title: "",
+            linkList: [
+              {
+                itemHead: "Elasticsearch Index and Replica Management",
+                itemTime: "6 min",
+                redirectPage: "questions.html",
+              }
+            ],
+          }
+        ],
+      },
+      {
+        title: "2222",
+        // basicIntro: "Basic intro",
+        detailedList: [
+          {
+            title: "",
+            linkList: [
+              {
+                itemHead: "Logging Frameworks in Python",
+                itemTime: "6 min",
+              },
+              {
+                itemHead: "Logging Frameworks in Go",
+                itemTime: "4 min",
+              },
+            ],
+          }
+        ],
+      },
+    ];
+    $("#guide-link-list").guide({
+      titleList: titleList,
+      data: data,
     });
 
 });
