@@ -4,7 +4,9 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
-    let titleList = ["ElasticSearch", "Logs"];
+    $("#copyBtn").on("click", copyInstallCmd);
+    $("#copyCmdBtn").on("click", copyGenerateTextCmd);
+    let titleList = ["ElasticSearch", "Logging"];
     let data = [
       {
         title: "ElasticSearch",
@@ -23,7 +25,7 @@ $(document).ready(() => {
         ],
       },
       {
-        title: "2222",
+        title: "Logging",
         // basicIntro: "Basic intro",
         detailedList: [
           {
@@ -48,6 +50,22 @@ $(document).ready(() => {
     });
 
 });
+function copyInstallCmd() {
+  let text = $("#install-text").text();
+  copyToClipboard(text);
+}
+function copyGenerateTextCmd() {
+  let text = $("#cmd-box").text();
+  copyToClipboard(text);
+}
+function copyToClipboard(text) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+}
 
 function newsletterFormHandler(evt) {
     evt.preventDefault();
