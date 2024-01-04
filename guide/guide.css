@@ -37,7 +37,7 @@ body {
     width: 100%;
     background: rgba(241,250,255,.8);
 }
-.container, .container-sm, .container-md, .container-lg {
+.container-2, .container-sm, .container-md, .container-lg {
     max-width: 100%;
     margin-left: 0px;
     padding-left: 0px;
@@ -164,13 +164,7 @@ html {
 .sdm{
     margin-left: 15px;
 }
-footer,.pb-5,#footer{
-    background-color: rgb(2 ,0 ,13);
-    padding: 30px;
-    box-sizing: border-box;
-    background-position: center;
-    background-size: 100%;
-}
+
 .blog-para {
     font-size: 16px;
     line-height: 2em;
@@ -190,6 +184,7 @@ footer,.pb-5,#footer{
 
     .main-heading {
         font-size: 32px;
+        padding-left: 0.8rem;
     }
 
     .blog-post .para-bold {
@@ -222,6 +217,7 @@ footer,.pb-5,#footer{
 
     #all-sections {
         margin: 0;
+        margin-top: 13.37rem;
         overflow-x: hidden;
     }
 
@@ -238,7 +234,10 @@ footer,.pb-5,#footer{
     .comparision-table {
         overflow-x: auto;
     }
-
+    .main-guide-img3{
+        height: 210px;
+        margin-left: 0.9rem;
+    }
     .sys-compare-table thead th:first-child {
         min-width: 0px;
     }

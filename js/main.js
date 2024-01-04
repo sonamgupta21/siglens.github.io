@@ -16,7 +16,7 @@ $(document).ready(() => {
               {
                 itemHead: "Elasticsearch Index and Replica Management",
                 itemTime: "6 min",
-                redirectPage: "questions.html",
+                redirectPage: "./guide/elasticSearch.html",
               }
             ],
           }
