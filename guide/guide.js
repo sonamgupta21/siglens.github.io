@@ -16,7 +16,7 @@ $(document).ready(() => {
       const sectionId = $(this).attr("id");
       const navLink = $(`.section-nav-link[href="#${sectionId}"]`);
 
-      if (scrollPos >= sectionTop - 290) {
+      if (scrollPos >= sectionTop - 110) {
         $(".section-nav-link").removeClass("active");
         navLink.addClass("active");
       }

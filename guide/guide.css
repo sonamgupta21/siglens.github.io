@@ -50,13 +50,6 @@ body {
 .mx-auto,.col-md-10 {
     margin-right: 50px !important;
 }
-.fixed-top1 {
-    position: fixed;
-    top: 50;
-    right: 0;
-    left: 0;
-    z-index: 1000;
-    }
 .main-heading {
     color: var( --white-0);
     letter-spacing: 0.03rem;
@@ -83,7 +76,7 @@ body {
     margin-left: 70px;
 }
 #sidebar {
-    top: 270px;
+    top: 90px;
     bottom: 90px;
     position: sticky;
     width: 250px;
@@ -113,7 +106,6 @@ body {
     margin-left: -10px;
 }
 #all-sections {
-    margin-top: 12.37rem;
     margin-left: 1.25rem;
     margin-right: 0em;
 }
@@ -176,7 +168,6 @@ html {
 
     #all-sections {
         margin: 0;
-        margin-top: 17.37rem;
         overflow-x: hidden;
     }
 
