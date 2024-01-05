@@ -4,7 +4,98 @@
 
 $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
+    $("#copyBtn").on("click", copyInstallCmd);
+    $("#copyCmdBtn").on("click", copyGenerateTextCmd);
+    let titleList = ["ElasticSearch", "Logging"];
+    let data = [
+      {
+        title: "ElasticSearch",
+        // basicIntro:"Basic intro",
+        detailedList: [
+          {
+            title: "",
+            linkList: [
+              {
+                itemHead: "Elasticsearch Index and Replica Management",
+                itemTime: "6 min",
+                redirectPage: "./guides/elasticSearch.html",
+              }
+            ],
+          }
+        ],
+      },
+      {
+        title: "Logging",
+        // basicIntro: "Basic intro",
+        detailedList: [
+          {
+            title: "",
+            linkList: [
+              {
+                itemHead: "Logging Frameworks in Python",
+                itemTime: "6 min",
+              },
+              {
+                itemHead: "Logging Frameworks in Go",
+                itemTime: "4 min",
+              },
+            ],
+          }
+        ],
+      },
+    ];
+    $("#guide-link-list").guide({
+      titleList: titleList,
+      data: data,
+    });
+
 });
+function copyInstallCmd() {
+  let text = $("#install-text").text();
+  copyToClipboard(text);
+  var checkMark = document.getElementById("check-mark");
+  checkMark.classList.remove("show");
+  checkMark.classList.add("show");
+  checkMark.addEventListener(
+    "transitionend",
+    function () {
+      checkMark.classList.remove("show");
+    },
+    { once: true }
+  );
+  var disappearingImage = document.getElementById("copyBtn");
+  disappearingImage.classList.add("disappear");
+  setTimeout(function () {
+    disappearingImage.classList.remove("disappear");
+  }, 1000);
+}
+function copyGenerateTextCmd() {
+  let text = $("#cmd-box").text();
+  copyToClipboard(text);
+  var checkMark = document.getElementById("check-mark-data");
+  checkMark.classList.remove("show");
+  checkMark.classList.add("show");
+  checkMark.addEventListener(
+    "transitionend",
+    function () {
+      checkMark.classList.remove("show");
+    },
+    { once: true }
+  );
+  var disappearingImage = document.getElementById("copyCmdBtn");
+  disappearingImage.classList.add("disappear");
+  setTimeout(function () {
+    disappearingImage.classList.remove("disappear");
+  }, 1000);
+}
+function copyToClipboard(text) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textarea);
+}
 
 function newsletterFormHandler(evt) {
     evt.preventDefault();
