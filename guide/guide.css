@@ -56,12 +56,16 @@ body {
     font-size: 34px;
     font-weight: 800;
     line-height: 130%;
+    margin-top: 2rem;
     margin-left: 20px;
     margin-right: auto;
     width: 100%;
 }
 .blog-post ul li {
     text-align: left;
+}
+li{
+    letter-spacing: 0.05rem;
 }
 .blog-post .para-bold {
     font-weight: 400;
@@ -132,12 +136,17 @@ html {
 /*Mobile Devices*/
 
 @media (max-width: 767.98px) {
-
+    .bc{
+        width: fit-content;
+    }
+    .bgi{
+        background-size: 100%;
+    }
     .main-heading {
         font-size: 32px;
         padding-left: 0.8rem;
     }
-
+    
     .blog-post .para-bold {
         font-size: 16px;
         line-height: 140%;

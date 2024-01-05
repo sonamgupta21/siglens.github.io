@@ -217,7 +217,6 @@
                             <p class="my-2 para-bold pr-3">
                                 The appropriate replica count in Elasticsearch is determined by your specific use case, requirements, and the trade-offs you are willing to make. Replicas are useful for various reasons, including fault tolerance, data availability, and query performance. Here are some use cases:
                             </p>
-                            <br>
                             <dl>
                             <ol>
                             <li>
@@ -226,27 +225,23 @@
                                 <dd><b>Use Case:</b> If ensuring high availability and fault tolerance is your primary concern, consider setting the replica count to at least 1 (one replica per primary shard). This configuration guarantees that if a node or shard fails, a copy of the data is available on another node, minimizing the risk of data loss and service disruptions.
                                 </dd>
                             </li>
-                            <br>
                             <li>
                             <dt><h6 class="sub-heading mt-4 section" id="section4-2">Write-intensive workloads</h6>
                             </dt>
                                 <dd><b>Use Case:</b> If your workload involves frequent updates or writes, increasing the number of replicas can help parallelize indexing operations, reducing the load on primary shards.
-                                <br>
                                 Recommended Replica Count: To balance write and query performance, consider adding 1 or 2 additional replicas per primary shard.
                                 </dd>
                             </li>
-                            <br>
                             <li>
                             <dt><h6 class="sub-heading mt-4 section" id="section4-3">Resource constraints:</h6>
                             </dt>
                             <dd><b>Use Case:</b>Keeping the replica count low in resource-constrained environments or when dealing with limited hardware resources can help conserve storage and CPU resources.
-                            <br>
                                 Recommended Replica Count: Depending on your risk tolerance and availability requirements, you may choose to have only one replica per primary shard or none.
                             </dd>
                             </li>
                             </ol>
                             </dl>
-                            <br><br>
+                            <br>
                         </div>
                     </div>
                     <div id="section5" class="section">
