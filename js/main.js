@@ -18,7 +18,7 @@ $(document).ready(() => {
               {
                 itemHead: "Elasticsearch Index and Replica Management",
                 itemTime: "6 min",
-                redirectPage: "questions.html",
+                redirectPage: "./guides/elasticSearch.html",
               }
             ],
           }
@@ -53,10 +53,40 @@ $(document).ready(() => {
 function copyInstallCmd() {
   let text = $("#install-text").text();
   copyToClipboard(text);
+  var checkMark = document.getElementById("check-mark");
+  checkMark.classList.remove("show");
+  checkMark.classList.add("show");
+  checkMark.addEventListener(
+    "transitionend",
+    function () {
+      checkMark.classList.remove("show");
+    },
+    { once: true }
+  );
+  var disappearingImage = document.getElementById("copyBtn");
+  disappearingImage.classList.add("disappear");
+  setTimeout(function () {
+    disappearingImage.classList.remove("disappear");
+  }, 1000);
 }
 function copyGenerateTextCmd() {
   let text = $("#cmd-box").text();
   copyToClipboard(text);
+  var checkMark = document.getElementById("check-mark-data");
+  checkMark.classList.remove("show");
+  checkMark.classList.add("show");
+  checkMark.addEventListener(
+    "transitionend",
+    function () {
+      checkMark.classList.remove("show");
+    },
+    { once: true }
+  );
+  var disappearingImage = document.getElementById("copyCmdBtn");
+  disappearingImage.classList.add("disappear");
+  setTimeout(function () {
+    disappearingImage.classList.remove("disappear");
+  }, 1000);
 }
 function copyToClipboard(text) {
   const textarea = document.createElement("textarea");

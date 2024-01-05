@@ -397,6 +397,8 @@ a:focus {
     right: 20px;
     cursor: pointer;
     color: #9772db;
+    opacity: 1;
+    z-index: 10;
 }
 
 .nav-tabs {
@@ -631,4 +633,41 @@ line-height: 26px;}
 
 .cmd-title::before {
     content: "\00a0";
+}
+.check-mark {
+    width: 30px;
+    height: 30px;
+    stroke: #9176d5;
+    fill: none;
+    opacity: 0;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    transition: opacity 0.8s ease-in-out, stroke-dashoffset 0s ease-in-out;
+    position: absolute;
+    right: 15px;
+}
+
+.check-mark.show {
+    opacity: 1;
+    stroke-dashoffset: 0;
+}
+.check-mark-data {
+    width: 30px;
+    height: 30px;
+    stroke: #9176d5;
+    fill: none;
+    opacity: 0;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    transition: opacity 0.8s ease-in-out, stroke-dashoffset 0s ease-in-out;
+    position: absolute;
+    right: 10px;
+}
+
+.check-mark-data.show {
+    opacity: 1;
+    stroke-dashoffset: 0;
+}
+.disappear {
+    display: none;
 }
