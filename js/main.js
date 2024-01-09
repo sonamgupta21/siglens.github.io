@@ -6,6 +6,7 @@ $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
     $("#copyBtn").on("click", copyInstallCmd);
     $("#copyCmdBtn").on("click", copyGenerateTextCmd);
+
     let titleList = ["ElasticSearch", "Logging"];
     let data = [
       {
