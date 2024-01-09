@@ -6,6 +6,7 @@ $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
     $("#copyBtn").on("click", copyInstallCmd);
     $("#copyCmdBtn").on("click", copyGenerateTextCmd);
+
     let titleList = ["ElasticSearch", "Logging"];
     let data = [
       {
@@ -34,6 +35,7 @@ $(document).ready(() => {
               {
                 itemHead: "Logging Frameworks in Python",
                 itemTime: "6 min",
+                redirectPage: "./guides/Logging-frameworks-python.html",
               },
               {
                 itemHead: "Logging Frameworks in Go",
