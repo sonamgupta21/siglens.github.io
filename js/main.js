@@ -34,6 +34,7 @@ $(document).ready(() => {
               {
                 itemHead: "Logging Frameworks in Python",
                 itemTime: "6 min",
+                redirectPage: "./guides/Logging-frameworks-python.html",
               },
               {
                 itemHead: "Logging Frameworks in Go",
