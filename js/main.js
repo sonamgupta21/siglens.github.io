@@ -40,6 +40,7 @@ $(document).ready(() => {
               {
                 itemHead: "Logging Frameworks in Go",
                 itemTime: "4 min",
+                redirectPage: "./guides/logging-frameworks-go.html",
               },
             ],
           }
