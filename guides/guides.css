@@ -48,7 +48,7 @@ body {
 }
 
 .mx-auto,.col-md-10 {
-    margin-right: 50px !important;
+    margin-right: 5px !important;
 }
 .main-heading {
     color: var( --white-0);
