@@ -74,6 +74,7 @@ li{
     color: var(--black-1);
     line-height: 175%;
 }
+/* ElasticSearch image */
 .main-guide-img3{
     height: 350px;
     width: 600;
@@ -132,6 +133,7 @@ html {
     font-weight: 500;
     letter-spacing: 0.02rem;
 }
+/* Logging frameworks in python images*/
 .python-img1{
     height: 350px;
     width: 600px;
@@ -144,8 +146,8 @@ html {
 }
 .fstrow{
     color: #684dd9;
-    font-weight: 700;
-    font-size: 12pt;
+    font-weight: 600;
+    font-size: 10pt;
     font-family: "Nunito";
 }
 .table-div, .comparision-table {
@@ -163,7 +165,7 @@ table {
     color: var(--black-2);
 }
 table thead th:first-child {
-    border-radius: 6px 0 0 0;
+    border-radius: 0 0 0 0;
 }
 table thead th{
     border-left-color: #222222;
@@ -174,15 +176,16 @@ table thead th{
 }
 table th {
     color: #ffffff;
-    font-weight: 700;
-    font-size: 14pt;
+    font-weight: 650;
+    font-size: 12pt;
     font-family: "Nunito";
-    vertical-align: top;
-    padding: 20px;
+    vertical-align: center;
+    padding: 10px;
+    white-space: nowrap;
     border: 1.5px solid #684dd9;
 }
 table thead th:last-child {
-    border-radius: 0 6px 0 0;
+    border-radius: 0 0 0 0;
 }
 .ShapeDataTable tbody {
     background: #ffffff !important;
@@ -197,11 +200,12 @@ table tbody {
     padding: 5pt 5pt 5pt 5pt;
     border-color: #684dd9;
     border-width: 1.5pt;
-    vertical-align: top;
+    vertical-align: center;
     width: 109.5pt;
 }
 table td {
-    vertical-align: top;
+    vertical-align: center;
+    text-align: center;
     padding: 14px;
     border: 1.5px solid var(--white-0);
 }
@@ -268,17 +272,21 @@ table td {
     .comparision-table {
         overflow-x: auto;
     }
+    /* ElasticSearch image */
     .main-guide-img3{
         height: 210px;
         margin-left: 0.9rem;
     }
+    /* Logging frameworks in python */
     .python-img1{
-        height: 300px;
-        margin-left: 0.9rem;
+        height: 200px;
+        width: 300px;
+        margin-left: 0.7rem;
     }
     .python-img2{
-        height: 280px;
-        margin-left:0.9rem;
+        height: 210px;
+        width: 300px;
+        margin-left:0.4rem;
     }
     .sys-compare-table thead th:first-child {
         min-width: 0px;
