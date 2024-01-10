@@ -147,7 +147,7 @@ function renderGuidesList(){
             {
               itemHead: "Logging Frameworks in Go",
               itemTime: "4 min",
-              redirectToPage: "../guides/logging-frameworks-go.html"
+              redirectPage: "../guides/logging-frameworks-go.html",
             },
           ],
         }
