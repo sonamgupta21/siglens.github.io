@@ -150,6 +150,12 @@ function renderGuidesList(){
               itemTime: "4 min",
               redirectToPage: "#"
             },
+            {
+              itemHead: "Logging Frameworks in .Net",
+              itemTime: "6 min",
+              redirectPage: "../guides/logging-frameworks-dotNet.html",
+
+            },
           ],
         }
       ],
