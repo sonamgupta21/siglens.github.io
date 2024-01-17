@@ -158,6 +158,13 @@ function renderGuidesList(){
               itemHead: "Logging Frameworks in Java",
               itemTime: "6 min",
               redirectPage: "../guides/logging-frameworks-java.html",
+
+            },
+            {
+              itemHead: "Logging Frameworks in .Net",
+              itemTime: "6 min",
+              redirectPage: "../guides/logging-frameworks-dotNet.html",
+
             },
           ],
         }
