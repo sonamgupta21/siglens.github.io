@@ -184,6 +184,9 @@ table th {
     white-space: nowrap;
     border: 1.5px solid #684dd9;
 }
+.inc-wid{
+    white-space: nowrap;
+}
 .br-txt{
     white-space: inherit;
 }
