@@ -685,15 +685,17 @@ class Program
             builder.AddConsole(); // Example: Console Logging Provider
         });
                                         
-        ILogger logger = loggerFactory.CreateLogger<Program>();
+        ILogger logger = loggerFactory.CreateLogger&lt;Program&gt;();
         logger.LogInformation("Hello, Logging!"); // Logging an Information-level message
-    }
-}Scope"))
+                                        
+        // Additional code with logging and scope (optional)
+        using (var scope = logger.BeginScope("Transaction Scope"))
         {
             logger.LogInformation("Transaction initiated."); // Logging with added scope/context
         }
     }
-}</code></pre>
+}
+</code></pre>
 <br>
                                 </div>
                             </div>
