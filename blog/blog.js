@@ -6,7 +6,7 @@ $(document).ready(() => {
     $(this).addClass("active");
     const href = $(this).attr("href");
     const offsetTop = $(href).offset().top;
-    $("html, body").animate({ scrollTop: offsetTop - 100 }, "fast");
+    $("html, body").animate({ scrollTop: offsetTop - 85 }, "fast");
   });
 
   $(window).scroll(function() {

@@ -331,6 +331,10 @@ html {
     line-height: 32px;
 }
 
+#sidebar .sub-navbar li {
+    line-height: 28px ;
+}
+
 .note{
     background-color: #f1f2ffe5;
     color: rgba(35, 23, 74, 0.8) !important;
