@@ -6,49 +6,14 @@ $(document).ready(() => {
     $('#ns-form-btn').on('click', newsletterFormHandler);
     $("#copyBtn").on("click", copyInstallCmd);
     $("#copyCmdBtn").on("click", copyGenerateTextCmd);
-    let titleList = ["ElasticSearch", "Logging"];
-    let data = [
-      {
-        title: "ElasticSearch",
-        // basicIntro:"Basic intro",
-        detailedList: [
-          {
-            title: "",
-            linkList: [
-              {
-                itemHead: "Elasticsearch Index and Replica Management",
-                itemTime: "6 min",
-                redirectPage: "./guides/elasticSearch.html",
-              }
-            ],
-          }
-        ],
-      },
-      {
-        title: "Logging",
-        // basicIntro: "Basic intro",
-        detailedList: [
-          {
-            title: "",
-            linkList: [
-              {
-                itemHead: "Logging Frameworks in Python",
-                itemTime: "6 min",
-              },
-              {
-                itemHead: "Logging Frameworks in Go",
-                itemTime: "4 min",
-              },
-            ],
-          }
-        ],
-      },
-    ];
-    $("#guide-link-list").guide({
-      titleList: titleList,
-      data: data,
-    });
 
+    const currentUrl = window.location.href;
+    if (currentUrl.includes("guides.html")) {
+      renderGuidesList();
+    }
+    // else if (currentUrl.includes("questions.html")) {
+    //   renderQuestionsList();
+    // }
 });
 function copyInstallCmd() {
   let text = $("#install-text").text();
@@ -147,5 +112,84 @@ function newsletterFormHandler(evt) {
 }
 
 function redirectToPage(url) {
-    window.location.href = url;
-  }
+  window.location.href = url;
+}
+
+function renderGuidesList(){
+  let titleList = ["ElasticSearch", "Logs"];
+  let guidesData = [
+    {
+      title: "ElasticSearch",
+      detailedList: [
+        {
+          title: "",
+          linkList: [
+            {
+              itemHead: "Elasticsearch Index and Replica Management",
+              itemTime: "6 min",
+              redirectPage: "../guides/elasticSearch.html",
+            }
+          ],
+        }
+      ],
+    },
+    {
+      title: "2222",
+      detailedList: [
+        {
+          title: "",
+          linkList: [
+            {
+              itemHead: "Logging Frameworks in Python",
+              itemTime: "6 min",
+              redirectPage: "../guides/Logging-frameworks-python.html",
+
+            },
+            {
+              itemHead: "Logging Frameworks in Go",
+              itemTime: "4 min",
+              redirectPage: "../guides/logging-frameworks-go.html",
+            },
+            {
+              itemHead: "Logging Frameworks in Node.js",
+              itemTime: "4 min",
+              redirectPage: "../guides/logging-frameworks-nodeJs.html",
+            },
+            {
+              itemHead: "Logging Frameworks in Java",
+              itemTime: "6 min",
+              redirectPage: "../guides/logging-frameworks-java.html",
+
+            },
+            {
+              itemHead: "Logging Frameworks in .Net",
+              itemTime: "6 min",
+              redirectPage: "../guides/logging-frameworks-dotNet.html",
+
+            },
+          ],
+        }
+      ],
+    },
+  ];
+  $("#guide-link-list").guide({
+    titleList: titleList,
+    data: guidesData,
+  });
+}
+
+function renderQuestionsList(){
+  let questionsData = [
+    {
+      title: "How to WhiteList Sigscalr IPs",
+      introduce:
+        "The official documentation provides list of all used Better Stack IPs as well as the User Agent. They are split into regions for easier navigation.",
+      keywords: ["Sigscalr IP", "Logging", "Python"],
+      updateDate: "October 10, 2010",
+      redirectPage: "guides.html",
+    }
+  ];
+  $("#question-list").question({
+    data: questionsData,
+});
+}
