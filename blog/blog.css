@@ -73,6 +73,11 @@ body {
     padding: 20px;
 }
 
+.foot-note::after{
+    content:'*';
+    color: rgb(124, 58, 237);
+}
+
 /*Single Blog Post*/
 
 .main-heading {
@@ -420,7 +425,9 @@ b{
     height: 340px;
     object-fit: cover;
     border-radius: 25px;
-    margin-left: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .observability-blog-img {
