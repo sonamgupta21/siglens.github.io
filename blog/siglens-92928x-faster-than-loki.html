@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SigLens | SigLens 54x faster than ClickHouse</title>
+    <title>SigLens | SigLens 92,928x faster than Grafana Loki</title>
     <link rel="icon" href="../favicon.svg">
 
     <!-- Font Family -->
@@ -27,26 +27,26 @@
     <!-- Include Prism.js CSS -->
     <link rel="stylesheet" href="./dark-theme-prismjs.css">
 
-    <link rel="canonical" href="https://www.siglens.com/blog/siglens-54x-faster-than-clickhouse.html">
+    <link rel="canonical" href="https://www.siglens.com/blog/siglens-92928x-faster-than-loki.html">
     <!--OG Tags-->
-    <meta property="og:url" content="https://www.siglens.com/blog/siglens-54x-faster-than-clickhouse.html" />
-    <meta property="og:title" content="SigLens 54x faster than ClickHouse" />
+    <meta property="og:url" content="https://www.siglens.com/blog/siglens-92928x-faster-than-loki.html" />
+    <meta property="og:title" content="SigLens 92,928x faster than Grafana Loki" />
     <meta property="og:description"
-        content="SigLens - 54x faster than ClickHouse. Reduce your observability costs by 90%" />
+        content="SigLens - 92,928x faster than Grafana Loki. Reduce your observability costs by 90%" />
     <meta property="og:type" content="article">
-    <meta property="og:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
-    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png" />
+    <meta property="og:image" content="https://www.siglens.com/assets/siglens-vs-loki.png" />
+    <meta property="og:image:secure_url" content="https://www.siglens.com/assets/siglens-vs-loki.png" />
     <meta property="og:image:type" content="image/jpg" />
-    <meta name="image" property="og:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png">
+    <meta name="image" property="og:image" content="https://www.siglens.com/assets/siglens-vs-loki.png">
     <meta property="og:image:width" content="1920">
     <meta property="og:image:height" content="1080">
 
     <!--Twitter OG Tag-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@siglens.com" />
-    <meta name="twitter:image" content="https://www.siglens.com/assets/siglens-vs-clickhouse.png">
+    <meta name="twitter:image" content="https://www.siglens.com/assets/siglens-vs-loki.png">
     </meta>
-    <meta name="twitter:image:alt" content="SigLens 54x faster than ClickHouse" />
+    <meta name="twitter:image:alt" content="SigLens 92,928x faster than Grafana Loki" />
     <style>
         .sub-heading {
             margin-top: 24px !important;
@@ -174,7 +174,7 @@
 
 
         <div class="container-md">
-            <img class="mt-3 ss-vs-ch" src="../assets/siglens-vs-clickhouse.png" />
+            <img class="mt-3 ss-vs-ch" src="../assets/siglens-vs-loki.png" />
             <div class="d-flex">
                 <div id="sidebar">
                     <nav id="sidebar-nav">
@@ -189,7 +189,7 @@
                                     the databases</a>
                             </li>
                             <ul class="sub-navbar flex-column">
-                                <li class="nav-item"><a class="section-nav-link" href="#section2-1">ClickHouse</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section2-1">Grafana Loki</a></li>
                                 <li class="nav-item"><a class="section-nav-link" href="#section2-2">SigLens</a></li>
                             </ul>
                             <li class="nav-item main-link"><a class="section-nav-link" href="#section3">Test
@@ -202,21 +202,15 @@
                                     </a></li>
                             </ul>
                             <li class="nav-item main-link"><a class="section-nav-link" href="#section4">Benchmark
-                                    ClickHouse</a></li>
+                                    Grafana Loki</a></li>
                             <ul class="sub-navbar flex-column">
-                                <li class="nav-item"><a class="section-nav-link" href="#section4-1">Install
-                                        ClickHouse</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section4-2">Configure the
-                                        ClickHouse data folder</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-1">Install Loki and Promtail</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-2">Update the default configurations</a></li>
                                 <li class="nav-item"><a class="section-nav-link" href="#section4-3">Run
-                                        ClickHouse</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section4-4">Make the
-                                        ClickHouse Table</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section4-5">Ingest Data into
-                                        ClickHouse</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section4-6">Run Queries
-                                        against ClickHouse</a></li>
-                                <li class="nav-item"><a class="section-nav-link" href="#section4-7">ClickHouse Query
+                                        Loki and Promtail</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-4">Ingest the Data</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-5">Run the Queries in Loki</a></li>
+                                <li class="nav-item"><a class="section-nav-link" href="#section4-6">Grafana Loki Query
                                         Results</a></li>
                             </ul>
                             <li class="nav-item main-link"><a class="section-nav-link" href="#section5">Benchmark
@@ -249,15 +243,10 @@
                 <div id="all-sections" class="container-md">
                     <div id="section0" class="d-flex flex-column align-items-center">
                         <div class="para-bold mb-2 mt-4">
-                            SigLens beats ClickHouse
-                            by a staggering <strong style="font-size: 20px;">54x</strong> in the NYC Taxi Dataset
-                            performance test. This test resulted in processing 1 billion records and SigLens performed
-                            magnitudes faster than ClickHouse.
+                            SigLens beats Grafana Loki by a sensational <strong style="font-size: 20px;">92,928x</strong> in the NYC Taxi Dataset performance test. This test resulted in processing 1 billion records and SigLens performed magnitudes faster than Loki.
                         </div>
                         <div class="para-bold mb-3">
-                            In this blog we outline the
-                            detailed steps of this benchmark. You will learn ingestion and querying of a massive dataset
-                            along with tuning systems settings. Let’s dive in.
+                            In this blog, we outlined the detailed steps of this benchmark. You will learn ingestion and querying of a massive dataset along with tuning systems settings. Let’s explore it.
                         </div>
                     </div>
                     <div id="section1" class="section">
@@ -300,14 +289,9 @@
                         <h1 class="heading">Introductions of the databases
                         </h1>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section2-1"> ClickHouse:
+                            <h2 class="sub-heading mt-2 section" id="section2-1"> Grafana Loki:
                             </h2>
-                            <div class="mt-2">ClickHouse is a column oriented database. It offers compressions over each
-                                column yielding significant savings on storage. Its SQL based query engine is quite fast
-                                and
-                                answers queries in milliseconds. Increasingly many observability companies are using it
-                                as a
-                                backend database for storing logs, metrics and traces.
+                            <div class="mt-2">Loki is a Prometheus inspired multi-tenant, highly available, horizontally scalable log aggregation system. In contrast to Prometheus, Loki collects logs using push rather than pull methods and places more emphasis on logs than metrics.<p>Loki simply indexes metadata about your logs, such as a set of labels for each log stream, not the actual contents of the logs. Loki-based logging stack consists of 3 components viz. Agent ( for example, Promtail), Loki (main server) and Grafana.</p>
                             </div>
                         </div>
                         <div>
@@ -331,7 +315,7 @@
                             <div>
                                 <div class="blog-para mt-2">
                                     We used an AWS <span class="courier-font">im4gn.2xlarge</span> instance for both
-                                    SigLens and ClickHouse, it had the following hardware configuration:
+                                    SigLens and Loki, it had the following hardware configuration:
                                     <ul>
                                         <li>8 vCPUs</li>
                                         <li>32 GB of RAM</li>
@@ -412,181 +396,118 @@ cd /mnt/nvme1n1/data</code></pre>
                                     href="https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page">https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page</a>
                                 into above dir. We used the 2011-2017 yellow taxi trip parquet files
                             </div>
-
-                            <div class="my-3">Next, you need to convert the parquet files to TSV.</div>
-
-                            <pre class="language-javascript"><code class="language-javascript">git clone git@github.com:siglens/siglens
-python -m venv taxis
-source taxis/bin/activate
-pip install -r siglens/tools/nyc-taxi-benchmark/requirements.txt
-python siglens/tools/nyc-taxi-benchmark/parquet_to_tsv.py . .</code></pre>
-                            <div class="my-3">
-                                The above cmd takes two parameters: input_dir , output_dir. It will read *.parquet
-                                files
-                                from the input_dir and convert them to tsv files and put them in output_dir.
-                            </div>
-                            <div class="my-3">
-                                ClickHouse will use the TSV files, but for SigLens we'll use JSON. Let’s convert the
-                                tsv
-                                files to json now. Put the below content in some bash file and run it or run the
-                                below
-                                commands in a terminal.
-                            </div>
-                            <pre class="language-javascript"><code class="language-javascript">for year in {2011..2017}; do
-    for month in {01..12}; do
-        basefile="yellow_tripdata_$year-$month"
-        go run siglens/tools/sigclient/cmd/utils/converter.go --input 
-"$basefile.tsv" --output "$basefile.json" &
-    done
-done
-wait</code></pre>
-                            <div class="my-3">
-                                Finally, compress the TSV and JSON files with gzip and upload them to your AWS S3
-                                bucket. We ingested the TSV and JSON files into separate directories to make it
-                                easier to
-                                download all of one type.
-                            </div>
                         </div>
                     </div>
                     <div id="section4" class="section">
                         <div>
-                            <h1 class="heading">Benchmark ClickHouse
+                            <h1 class="heading">Benchmark Grafana Loki
                             </h1>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-1">Install ClickHouse
+                            <div><p>You'll want three terminals. Terminal 1 will run Loki, Terminal 2 will run Promtail, and Terminal 3 will run ingestion and queries.</p></div>
+                            <h2 class="sub-heading mt-2 section" id="section4-1">Install Loki and Promtail
                             </h2>
-                            <div>We will use the precompiled apt packages for ClickHouse and install them.
-                            </div>
-                            <pre class="language-javascript"><code class="language-javascript"># Prepare to install ClickHouse
-sudo apt-get install -y apt-transport-https ca-certificates dirmngr
-GNUPGHOME=$(mktemp -d)
-sudo GNUPGHOME="$GNUPGHOME" gpg --no-default-keyring
---keyring /usr/share/keyrings/clickhouse-keyring.gpg --keyserver 
-hkp://keyserver.ubuntu.com:80 --recv-keys 8919F6BD2B48D754
-sudo rm -r "$GNUPGHOME"
-sudo chmod +r /usr/share/keyrings/clickhouse-keyring.gpg
-
-echo "deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/deb stable main" | sudo tee \
-    /etc/apt/sources.list.d/clickhouse.list
-sudo apt-get update
-# Install ClickHouse server and client
-sudo apt-get install -y clickhouse-server clickhouse-client</code></pre>
-                            <div class="blog-para mt-4">You should get the prompt <span class="courier-font">Enter
-                                    password
-                                    for default user:</span>. Either create a password or just press enter to have
-                                no
-                                password.</div>
+                            <pre class="language-javascript" style="max-width: 940px;"><code class="language-javascript">sudo apt install unzip -y
+                                
+mkdir /mnt/nvme1n1/loki
+cd /mnt/nvme1n1/loki
+                                
+curl -O -L "https://github.com/grafana/loki/releases/download/v2.9.4/loki-linux-arm64.zip"
+unzip loki-linux-arm64.zip
+chmod a+x loki-linux-arm64
+                                
+curl -O -L "https://github.com/grafana/loki/releases/download/v2.9.4/promtail-linux-arm64.zip"
+unzip promtail-linux-arm64.zip
+chmod a+x promtail-linux-arm64
+                                
+wget https://raw.githubusercontent.com/grafana/loki/v2.9.4/cmd/loki/loki-local-config.yaml
+wget https://raw.githubusercontent.com/grafana/loki/v2.9.4/clients/cmd/promtail/promtail-local-config.yaml</code></pre>
+                                <h2 class="sub-heading mt-2 section" id="section4-2">Update the default configurations
+                                </h2>
+                            <div class="blog-para mt-4">In <span class="courier-font">loki-local-config.yaml</span>, update these configurations with these new values:</div>
+                            <pre class="language-javascript"><code class="language-javascript">path_prefix: /mnt/nvme1n1/loki/internal/path
+chunks_directory: /mnt/nvme1n1/loki/internal/chunks
+rules_directory: /mnt/nvme1n1/loki/internal/rules</code></pre>
+                                <div>Increase the timeout limit by adding these into the <span class="courier-font">server</span> section:</div>
+                                <pre class="language-javascript"><code class="language-javascript">http_server_read_timeout: 12h
+http_server_write_timeout: 12h</code></pre>
+                                    <div>Add this to your config to avoid ingestion throttling and increase the number of buckets that queries are allowed to return.</div>
+                                    <pre class="language-javascript"><code class="language-javascript">limits_config:
+    per_stream_rate_limit: 4G
+    per_stream_rate_limit_burst: 4G
+    ingestion_rate_mb: 4096
+    ingestion_burst_size_mb: 4096
+    max_query_series: 1000000
+    query_timeout: 12h</code></pre>
+                                        <div>In <span class="courier-font">promtail-local-config.yaml</span> change <span class="courier-font">__path__</span> to:</div>
+                                        <pre class="language-javascript"><code class="language-javascript">__path__: /mnt/nvme1n1/data/*.json</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-2">Configure the ClickHouse data
-                                folder
+                            <h2 class="sub-heading mt-2 section" id="section4-3">Run Loki and Promtail
                             </h2>
-                            <div class="blog-para">
-                                This is an optional step to specify where ClickHouse should store its data. We did
-                                this
-                                so that both ClickHouse and SigLens would use the 3.5 TB storage space.</div>
+                            <div class="blog-para">In Terminal 1, start Loki with:
+                                <pre class="language-javascript"><code class="language-javascript">./loki-linux-arm64 -config.file=loki-local-config.yaml</code></pre>
+                            </div>
                             <div class="blog-para mt-2">
-                                Use <span class="courier-font">sudo vim /etc/clickhouse-server/config.xml</span> to
-                                change the line
-                                <span class="courier-font">&lt;path>/var/lib/clickhouse/&lt;/path></span> to <span
-                                    class="courier-font">&lt;path>/mnt/nvme1n1/clickhouse/&lt;/path></span>
+                                In Terminal 2, start Promtail with:
+                                    <pre class="language-javascript"><code class="language-javascript">./promtail-linux-arm64 -config.file=promtail-local-config.yaml</code></pre>
                             </div>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-3">Run ClickHouse
+                            <h2 class="sub-heading mt-2 section" id="section4-4">Ingest the Data
                             </h2>
+                            <div>In Terminal 3, run:</div>
                             <pre
-                                class="language-javascript"><code class="language-javascript">sudo service clickhouse-server start</code></pre>
-                        </div>
-                        <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-4">Make the ClickHouse Table
-                            </h2>
-                            We will use the ClickHouse client to create a table.
+                                class="language-javascript"><code class="language-javascript">mkdir /mnt/nvme1n1/data
+cd /mnt/nvme1n1/data
+                                    
+for year in {2011..2017}; do
+    for month in {01..12}; do
+        basefile="yellow_tripdata_$year-$month"
+                                    
+        aws s3 cp s3://siglens-benchmark-datasets/nyc-taxi-benchmark-data/json/$basefile.json.gz .
+        gunzip $basefile.json.gz
+    done
+done</code></pre>
+                                    Since Promtail is already running and configured to ingest all JSON files in this data/ directory, it will start ingesting the logs. You can check the progress of the ingestion with this bash:
                             <pre
-                                class="language-javascript"><code class="language-javascript">clickhouse-client</code></pre>
-                            <pre class="language-javascript"><code class="language-javascript">CREATE TABLE trips (
-    VendorID Int32,
-    tpep_pickup_datetime DateTime,
-    tpep_dropoff_datetime DateTime,
-    passenger_count Int32,
-    trip_distance Float32,
-    RatecodeID Int32,
-    store_and_fwd_flag FixedString(1),
-    PULocationID Int32,
-    DOLocationID Int32,
-    payment_type FixedString(3),
-    fare_amount Float32,
-    extra Float32,
-    mta_tax Float32,
-    tip_amount Float32,
-    tolls_amount Float32,
-    improvement_surcharge Float32,
-    total_amount Float32,
-    congestion_surcharge Float32,
-    airport_fee Float32)
-ENGINE = MergeTree()
-ORDER BY (tpep_pickup_datetime)
-SETTINGS index_granularity=8192</code></pre>
+                                class="language-javascript"><code class="language-javascript">total=$(curl -s http://localhost:9080/metrics | grep -v '^#' | awk '/promtail_file_bytes_total/ {sum += $2} END {print sum}'); \
+ingested=$(curl -s http://localhost:9080/metrics | grep -v '^#' | awk '/promtail_read_bytes_total/ {sum += $2} END {print sum}'); \
+percent=$(echo "$ingested $total" | awk '{printf "%.2f\n", ($1 / $2) * 100}'); \
+echo "percent ingested: $percent%"</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-5">Ingest Data into ClickHouse
+                            <h2 class="sub-heading mt-2 section" id="section4-5">Run the Queries in Loki
                             </h2>
-                            Let’s start ingesting data into ClickHouse. We will use the compressed tsv files we created
-                            earlier and let ClickHouse download it from the S3 bucket.
-                            <pre class="language-javascript"><code class="language-javascript">INSERT INTO trips
-SELECT
-    VendorID,
-    tpep_pickup_datetime,
-    tpep_dropoff_datetime,
-    passenger_count,
-    trip_distance,
-    RatecodeID,
-    store_and_fwd_flag,
-    PULocationID,
-    DOLocationID,
-    payment_type,
-    fare_amount,
-    extra,
-    mta_tax,
-    tip_amount,
-    tolls_amount,
-    improvement_surcharge,
-    total_amount,
-    congestion_surcharge,
-    airport_fee
-FROM s3(
-    's3://siglens-benchmark-datasets/nyc-taxi-benchmark-data/tsv/yellow_tripdata_{2011..2017}-{01..12}.tsv.gz',
-    'your_aws_access_key_id',
-    'your_aws_secret_access_key',
-    'TabSeparatedWithNames'
-);</code></pre>
-                            <div class="courier-font mt-4 note">Note: In above step AWS credentials are only needed if
-                                you
-                                are
-                                using a private S3 bucket, if you use our public S3 bucket you can remove those two
-                                lines.</div>
-
-                        </div>
-                        <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-6">Run Queries against ClickHouse
-                            </h2>
-                            Now let’s run the exact same SQL queries that we ran earlier.
+                            <div>After ingestion is complete, run the queries.</div>
                             <pre class="language-javascript"><code class="language-javascript"># Query 1
-SELECT airport_fee, count(*) FROM trips GROUP BY airport_fee
+curl -G -s "http://localhost:3100/loki/api/v1/query" \
+    --data-urlencode "query=sum(count_over_time({job=\"varlogs\"} | json [24h])) by (airport_fee)" \
+    --data-urlencode "time=$(date +%s)000000000" \
+    --data-urlencode "stats=true"
+                                
 # Query 2
-SELECT passenger_count, avg(total_amount) FROM trips GROUP BY passenger_count
+curl -G -s "http://localhost:3100/loki/api/v1/query" \
+    --data-urlencode "query=avg_over_time({job=\"varlogs\"} | json | unwrap total_amount [24h]) by (passenger_count)" \
+    --data-urlencode "time=$(date +%s)000000000" \
+    --data-urlencode "stats=true"
+                                
 # Query 3
-SELECT passenger_count, PULocationID, count(*) FROM trips GROUP BY passenger_count, PULocationID
+curl -G -s "http://localhost:3100/loki/api/v1/query" \
+    --data-urlencode "query=sum(count_over_time({job=\"varlogs\"} | json [24h])) by (passenger_count, PULocationID)" \
+    --data-urlencode "time=$(date +%s)000000000" \
+    --data-urlencode "stats=true"
+                                
 # Query 4
-SELECT passenger_count, PULocationID, trip_distance, count(*)
-FROM trips
-GROUP BY passenger_count, PULocationID, trip_distance</code></pre>
+curl -G -s "http://localhost:3100/loki/api/v1/query" \
+    --data-urlencode "query=sum(count_over_time({job=\"varlogs\"} | json [24h])) by (passenger_count, PULocationID, trip_distance)" \
+    --data-urlencode "time=$(date +%s)000000000" \
+    --data-urlencode "stats=true"</code></pre>
                         </div>
                         <div>
-                            <h2 class="sub-heading mt-2 section" id="section4-7">ClickHouse Query Results
+                            <h2 class="sub-heading mt-2 section" id="section4-6">Grafana Loki Query Results
                             </h2>
-                            We ran each query for 5 times, and took the lowest number from those runs.
+                            We ran each query for 5 times, and took the lowest number of all those runs.
                             <div class="my-4 table-div">
                                 <table class="ShapeDataTable query-result-table">
                                     <tr>
@@ -600,42 +521,43 @@ GROUP BY passenger_count, PULocationID, trip_distance</code></pre>
                                     </tr>
                                     <tr>
                                         <td class="yellow"><b>Q1</b></td>
-                                        <td>357 ms</td>
-                                        <td>346 ms</td>
-                                        <td>349 ms</td>
-                                        <td>417 ms</td>
-                                        <td>358 ms</td>
-                                        <td><b>346 ms</b></td>
+                                        <td>295,679 ms</td>
+                                        <td>292,636 ms</td>
+                                        <td>283,091 ms</td>
+                                        <td>281,638 ms</td>
+                                        <td>279,073 ms</td>
+                                        <td><b>279,073 ms</b></td>
                                     </tr>
                                     <tr>
                                         <td class="yellow"><b>Q2</b></td>
-                                        <td>2,642 ms</td>
-                                        <td>2,389 ms</td>
-                                        <td>2,427 ms</td>
-                                        <td>2,597 ms</td>
-                                        <td>2,349 ms</td>
-                                        <td><b>2,349 ms</b></td>
+                                        <td>3,998,457 ms</td>
+                                        <td>3,976,538 ms</td>
+                                        <td>4,007,424 ms</td>
+                                        <td>4,002,602 ms</td>
+                                        <td>3,994,540 ms</td>
+                                        <td><b>3,976,538 ms</b></td>
                                     </tr>
                                     <tr>
                                         <td class="yellow"><b>Q3</b></td>
-                                        <td>2,675 ms</td>
-                                        <td>2,108 ms</td>
-                                        <td>2,112 ms</td>
-                                        <td>2,294 ms</td>
-                                        <td>2,098 ms</td>
-                                        <td><b>2,098 ms</b></td>
+                                        <td>405,964 ms</td>
+                                        <td>413,498 ms</td>
+                                        <td>421,700 ms</td>
+                                        <td>416,008 ms</td>
+                                        <td>411,589 ms</td>
+                                        <td><b>405,964 ms</b></td>
                                     </tr>
                                     <tr>
                                         <td class="yellow"><b>Q4</b></td>
-                                        <td>8,240 ms</td>
-                                        <td>7,850 ms</td>
-                                        <td>8,211 ms</td>
-                                        <td>7,850 ms</td>
-                                        <td>7,807 ms</td>
-                                        <td><b>7,807 ms</b></td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td>N/A</td>
+                                        <td><b>N/A</b></td>
                                     </tr>
                                 </table>
                             </div>
+                            <div><p class="mt-2 courier-font note"><b>Note: </b>For query 4, we had increased Loki’s timeout limit to 12 hours, but after 4.5 hours the query returned and didn’t have any response (not even an empty json response), so it seems that Loki canceled the query for some reason.</p></div>
                         </div>
                     </div>
                     <div id="section5" class="section">
@@ -839,46 +761,39 @@ curl -X POST -d '{
                                     <thead>
                                         <tr>
                                             <th>Query Type</th>
-                                            <th>ClickHouse</th>
+                                            <th>Grafana Loki</th>
                                             <th>SigLens</th>
                                             <th>Comparison</th>
                                         </tr>
                                     </thead>
                                     <tr>
                                         <td>Q1</td>
-                                        <td>346 ms</td>
-                                        <td>41 ms</td>
-                                        <td>SigLens <b>8x</b> faster than ClickHouse</td>
+                                        <td>286,423 ms</td>
+                                        <td>55 ms</td>
+                                        <td>SigLens <b>5208 x</b> faster than Grafana Loki</td>
                                     </tr>
                                     <tr>
                                         <td>Q2</td>
-                                        <td>2,349 ms</td>
+                                        <td>3,995,912 ms</td>
                                         <td>43 ms</td>
-                                        <td>SigLens <b>54x</b> faster than ClickHouse</td>
+                                        <td>SigLens <b>92,928x</b> faster than Grafana Loki</td>
                                     </tr>
                                     <tr>
                                         <td>Q3</td>
-                                        <td>2,098 ms</td>
-                                        <td>166 ms</td>
-                                        <td>SigLens <b>18x</b> faster than ClickHouse</td>
+                                        <td>413,752 ms</td>
+                                        <td>368 ms</td>
+                                        <td>SigLens <b>1124x</b> faster than Grafana Loki</td>
                                     </tr>
                                     <tr>
                                         <td>Q4</td>
-                                        <td>7,807 ms</td>
-                                        <td>9,092 ms</td>
-                                        <td>ClickHouse <b>1.2x</b> faster than SigLens</td>
+                                        <td>N/A</td>
+                                        <td>9,509 ms</td>
+                                        <td><b>N/A</b></td>
                                     </tr>
                                 </table>
                             </div>
                             <div class="blog-para">
-                                SigLens proves to be <b>8x-54x</b> faster on 3 out of 4 query types. These speed
-                                advantages
-                                of
-                                SigLens are due to its dynamic columnar compressions, dynamic columnar
-                                microindexing,
-                                AgileAggsTree. These innovative techniques help run your filter and aggregation
-                                queries
-                                on complex datasets at lightning fast speeds.
+                                SigLens proves to be <b>1124x-92,928x</b> faster on all query types. These speed advantages of SigLens are due to its dynamic columnar compressions, dynamic columnar micro indexing, AgileAggsTree. These innovative techniques help run your filter and aggregation queries on complex datasets at lightning fast speeds.
                             </div>
                         </div>
                     </div>
@@ -892,7 +807,7 @@ curl -X POST -d '{
                             </div>
                             <div class="d-flex flex-column flex-md-row align-items-center">
                                 <div id="try-siglens-btn"
-                                    onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsch#getting-started')">
+                                    onclick="redirectToPage('https://www.siglens.com/?&utm_source=web&utm_medium=social&utm_campaign=sigvsloki#getting-started')">
                                     Try SigLens</div>
                                 <div id="github-siglens-btn" class="ml-md-5"
                                     onclick="redirectToPage('https://github.com/siglens/siglens')"><i
@@ -908,19 +823,11 @@ curl -X POST -d '{
                             <div class="blog-para mt-2">
                                 Both of these databases
                                 were
-                                given the exact same treatment, there was no unfair advantage given to SigLens. You
-                                can
-                                also look at the ClickHouse numbers on this blog by <a
-                                    href="https://tech.marksblogg.com/billion-nyc-taxi-clickhouse.html"
-                                    rel="nofollow">Mark
-                                    Litwintschik</a> who has run this exact same test on various ClickHouse clusters
-                                and also other databases. Our blog’s numbers for ClickHouse and Mark’s numbers are very
-                                close.
+                                given the exact same treatment, there was no unfair advantage given to SigLens.
                             </div>
                             <div class="blog-para mt-2">
                                 You can verify these
-                                test
-                                results yourself by following the detailed steps we have outlined above. If you feel
+                                test results yourself by following the detailed steps we have outlined above. If you feel
                                 something is incorrect please submit an issue or a pull request at <a
                                     href="https://github.com/siglens/siglens">https://github.com/siglens/siglens</a>.
                             </div>
