@@ -64,7 +64,7 @@
         <div class="container">
             <a class="navbar-brand " href="../index.html">
                 <div class="d-flex">
-                    <div class="pr-1"><img src="../assets/ss-logo.svg" alt=""></div>
+                    <div class="pr-1"><img src="../assets/ss-logo.svg" alt="siglens-logo"></div>
                     <div class="font-weight-bold text-white h2 pl-1">SigLens</div>
                 </div>
             </a>
@@ -82,7 +82,7 @@
                         <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="about-us.html" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Community </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="https://github.com/siglens/siglens">GitHub</a>
@@ -96,7 +96,7 @@
                     </li>
                     <li>
                         <a href="https://github.com/siglens/siglens" target="_blank">
-                            <img src="../assets/github.svg" width="26" height="26" alt="" />
+                            <img src="../assets/github.svg" width="26" height="26" alt="github-icon" />
                         </a>
                     </li>
                 </ul>
@@ -369,7 +369,7 @@
                                 handling such high data volumes.
                             </p><br>
                             <h4 class="sub-heading mt-2 section" id="section3-1">Ingestion Byte Rate</h4>
-                            <img id="ingestion-bytes" src="../assets/ingestion-bytes.png" alt="">
+                            <img id="ingestion-bytes" src="../assets/ingestion-bytes.png" alt="Ingestion Byte Rate">
                             <p class="blog-para mt-4">Each logline ingested
                                 during our testing was unique, resulting in a total cardinality of one trillion.
                                 The graph below illustrates SigScalr's remarkable performance, as it successfully
@@ -380,19 +380,19 @@
                                 handling massive data workloads.</p>
                             <br>
                             <h4 class="sub-heading mt-2 section" id="section3-2">Ingestion Event Rate:</h4>
-                            <img id="ingestion-events" src="../assets/ingestion-events.png" alt="">
+                            <img id="ingestion-events" src="../assets/ingestion-events.png" alt="Ingestion Event Rate">
                             <br><br>
                             <h4 class="sub-heading mt-2 section" id="section3-3">Ingestion CPU Usage:</h4>
                             <p class="blog-para mt-4">Even though we had
                                 allocated 1000 vCPU for the ingest pods,
                                 we ended up using on average just 805 vCPUs while processing
                                 a petabyte of data.</p>
-                            <img id="ingestion-cpu" src="../assets/ingestion-cpu.png" alt="">
+                            <img id="ingestion-cpu" src="../assets/ingestion-cpu.png" alt="Ingestion CPU Usage">
                             <br><br><br>
                             <h4 class="sub-heading mt-2 section" id="section3-4">Ingestion RAM Usage:</h4>
                             <p class="blog-para mt-4">Even though we had allocated 2 TB of RAM for the
                                 ingest pods, we ended up using only 916 GB.</p>
-                            <img id="ingestion-memory" src="../assets/ingestion-memory.png" alt="">
+                            <img id="ingestion-memory" src="../assets/ingestion-memory.png" alt="Ingestion RAM Usage">
                             <br><br><br>
                             <h4 class="sub-heading mt-2 section" id="section3-5">Storage Statistics:</h4>
                             <p class="blog-para mt-4">SigScalr takes the incoming data, converts it into columnar
@@ -400,13 +400,13 @@
                                 based on the shape of the data. These segments are periodically
                                 uploaded to S3 for high durability, longer retention and query scaleout. At the end of
                                 the test our storage statistics were as follows.</p>
-                            <img id="compression-ratio" src="../assets/compression-ratio.png" alt="">
+                            <img id="compression-ratio" src="../assets/compression-ratio.png" alt="Storage Statistics">
                             <br><br>
                             <h4 class="sub-heading mt-2 section" id="section3-6">Individual Index Counts:</h4>
                             <p class="blog-para mt-4">As seen in the graph below, each index had over <span
                                     class="font-weight-bold">67 TB</span> of data and <span class="font-weight-bold">66
                                     Billion</span> unique events.</p>
-                            <img id="cluster-stats-indexes" src="../assets/cluster-stats-indexes.png" alt="">
+                            <img id="cluster-stats-indexes" src="../assets/cluster-stats-indexes.png" alt="Individual Index Counts">
                         </div>
                     </div>
                     <br><br>
@@ -466,7 +466,7 @@
                                 SigScalr.
                             </p>
                             <br>
-                            <img id="aws-cost" src="../assets/aws-cost.png" alt="">
+                            <img id="aws-cost" src="../assets/aws-cost.png" alt="AWS-cost">
                             <br>
                             <p class="mt-4">Our total cost for running this test was a mere <span
                                     class="font-weight-bold">$1200</span> for the full 24-hour period. In comparison,
@@ -587,7 +587,7 @@
             </div>
 
             <div class="d-flex justify-content-center credits flex-column align-items-center mt-5 mt-md-0">
-                <img src="../assets/ss-logo.svg" alt="" style="height: 50px;">
+                <img src="../assets/ss-logo.svg" alt="siglens-logo" style="height: 50px;">
                 <div class="font-weight-bold text-white h1 mb-4 mt-2">SigLens</div>
                 <div class="text-center">Made with ❤️ in New Hampshire, California, Montana and India.</div>
                 <div>Copyright © 2024 - <strong class="text-white pointer-event"><a
