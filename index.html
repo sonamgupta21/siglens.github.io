@@ -49,8 +49,11 @@
 
 <body id="dark-theme">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top py-2 px-4 px-md-0">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg fixed-top d-flex flex-column p-0">
+    <div id="flashy-news">
+      <marquee id="marquee">SigScalr emerges from stealth, announces pre-seed funding of $1.76 Million, and launch of SigLens, an open source observability product</marquee>
+    </div>
+    <div class="container py-2 px-4 px-md-0">
       <a class="navbar-brand " href="index.html">
         <div class="d-flex">
           <div class="pr-1"><img src="./assets/ss-logo.svg" alt="siglens-logo"></div>
@@ -68,6 +71,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/blog/allblogs.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/press-news.html">Press & News</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -133,8 +139,8 @@
 
   <!-- Why SigLens  -->
   <section id="why-siglens">
-    <div class="container my-5">
-      <div class="main-heading text-center text-white font-weight-light mb-md-5 mb-3">Why SigLens?</div>
+    <div class="container pt-5">
+      <div class="main-heading text-center text-white font-weight-light mb-md-0 mb-3 pt-2 pt-md-5">Why SigLens?</div>
       <div class="row">
         <div class="col-md-12">
           <div class="vertical-tab" role="tabpanel">
@@ -246,7 +252,7 @@
     </div>
   </section>
 
-  <section class="my-md-5 pt-md-5">
+  <section class="my-md-5">
     <div class="container py-md-5 py-3 position-relative">
       <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient">
       <div class="main-heading text-center text-white font-weight-light mb-md-3 mb-4">SigLens Differentiator</div>
@@ -409,7 +415,7 @@
   </section>
 
   <!-- Getting Started -->
-  <section id="getting-started" class="py-5">
+  <section id="getting-started" class="py-3">
     <div class="container getting-started-container">
       <div class="main-heading text-center text-white font-weight-light mb-4">Install SigLens</div>
       <div class="m-auto text-center">
@@ -450,8 +456,8 @@
     </div>
   </section>
 
-  <section>
-    <div class="container" style="margin-bottom: 150px;">
+  <section class="pb-5">
+    <div class="container mb-5">
       <div class="main-heading text-center text-white font-weight-light mb-4">🎊 Win Cool Swag 🎊</div>
       <div class="d-flex justify-content-center ">
         <button class="btn mt-4" id="swag-btn">
@@ -462,9 +468,9 @@
   </section>
 
   <!-- Contribute and Community Section  -->
-  <section class="pt-md-0">
+  <section class="pt-md-5 pt-0">
     <div class="container position-relative">
-      <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient" style="width: 80%;    transform: translate(-50%, -40%);">
+      <img src="./assets/gradient-3.svg" alt="gradient" class="light-gradient" style="width: 80%; transform: translate(-50%, -40%);">
       <div class="row d-flex justify-content-center align-items-center">
         <div
           class="col-md-6 col-10 bottom-cards git-card d-flex justify-content-center align-items-center flex-column text-center"
@@ -508,6 +514,9 @@
           </div>
           <div>
             <a href="/blog/allblogs.html" class="footer-nav-heading">Blogs</a>
+          </div>
+          <div>
+            <a href="/press-news.html" class="footer-nav-heading">Press & News</a>
           </div>
           <div class="d-flex flex-column">
             <a href="#" class="footer-nav-heading">Community</a>
@@ -564,6 +573,20 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
   <script src="./js/main.js"></script>
+  <script>
+    function setScrollAmount() {
+        var marquee = document.getElementById("marquee");
+        var isMobile = window.innerWidth <= 767;
+        if (isMobile) {
+            marquee.scrollAmount = 5; // Set slower speed for mobile
+        } else {
+            marquee.scrollAmount = 10; // Set faster speed for desktop
+        }
+    }
+    setScrollAmount();
+    window.addEventListener("resize", setScrollAmount);
+  </script>
+
 </body>
 
 </html>
