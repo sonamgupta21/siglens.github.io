@@ -688,6 +688,9 @@ line-height: 26px;}
     background-size: cover;
     background-position: center;
 }
+.press-card .site-name{
+    color: var(--marigold);
+}
 .press-card .card-body{
     padding: 32px;
     letter-spacing: .02rem;
