@@ -792,6 +792,19 @@ line-height: 26px;}
 .thank-tick i{
     font-size: 70px;
 }
+
+.investors-column{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.investors-column .angel{
+    font-size: 20px;
+}
+
+.investors-column .angel a {
+    border-bottom: 1px solid white;
+}
 /* Mobile View  */
 
 @media (max-width: 767.98px) {
@@ -1001,5 +1014,13 @@ line-height: 26px;}
     #swag-btn{
         width: 180px;
         font-size: 16px;
+    }
+
+    .investors-column{
+        font-size: 20px;
+    }
+    
+    .investors-column .angel{
+        font-size: 18px;
     }
 }
